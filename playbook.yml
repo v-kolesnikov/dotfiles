@@ -15,10 +15,10 @@
         - wget
       become: yes
 
-    - copy: src={{ dotfiles }}/{{ item }} dest=~/.{{ item }}
+    - file: src={{ dotfiles }}/{{ item }} dest=~/.{{ item }} state=link
       with_items:
         - gitconfig
-        - vimrc
+        - vimrc 
 
     # Vim. Vundle plugin manager
     - git:
