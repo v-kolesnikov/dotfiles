@@ -5,7 +5,7 @@
   vars:
     dotfiles: /var/tmp/dotfiles
 
-  - tasks:
+  tasks:
     - name: Install basic tools
       apt: name={{ item }} state=latest #update_cache=yes
       with_items:
