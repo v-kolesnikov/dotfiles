@@ -1,0 +1,42 @@
+---
+
+- hosts: all
+  gather_facts: no
+  vars:
+    dotfiles: /var/tmp/dotfiles
+
+  - tasks:
+    - name: Install basic tools
+      apt: name={{ item }} state=latest #update_cache=yes
+      with_items:
+        - curl
+        - git
+        - vim
+        - wget
+      become: yes
+
+    - copy: src={{ dotfiles }}/{{ item }} dest=~/.{{ item }}
+      with_items:
+        - gitconfig
+        - vimrc
+
+    # Vim. Vundle plugin manager
+    - git:
+        repo: https://github.com/gmarik/Vundle.vim.git
+        dest: ~/.vim/bundle/Vundle.vim
+        version: v0.10.2
+
+    # Python
+    - name: Install Python pip
+      apt: name={{ item }} state=latest
+      with_items:
+        - python-pip
+      become: yes
+
+    - name: Install Python modules with pip
+      pip: name={{ item }} state=latest
+      with_items:
+        - pylint
+        - ansible-lint
+      become: yes
+      tags: python
