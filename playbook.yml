@@ -15,7 +15,7 @@
     - file: src={{ playbook_dir }}/{{ item }} dest=~/.{{ item }} state=link
       with_items:
         - gitconfig
-        - vimrc 
+        - vimrc
 
     - name: Install build-essential
       apt: name={{ item }} state=latest

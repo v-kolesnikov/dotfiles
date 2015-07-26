@@ -8,6 +8,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'chase/vim-ansible-yaml'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-git'
 Plugin 'scrooloose/nerdtree'
