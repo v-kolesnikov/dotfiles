@@ -1,9 +1,6 @@
 ---
 
 - hosts: all
-  gather_facts: no
-  vars:
-    dotfiles: /var/tmp/dotfiles
 
   tasks:
     - name: Install basic tools
@@ -15,7 +12,7 @@
         - wget
       become: yes
 
-    - file: src={{ dotfiles }}/{{ item }} dest=~/.{{ item }} state=link
+    - file: src={{ playbook_dir }}/{{ item }} dest=~/.{{ item }} state=link
       with_items:
         - gitconfig
         - vimrc 
