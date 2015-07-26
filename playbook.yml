@@ -35,6 +35,10 @@
     - name: Install Python modules with pip
       pip: name={{ item }} state=latest
       with_items:
+        - certifi
+        - pyopenssl
+        - ndg-httpsclient
+        - pyasn1
         - pylint
         - ansible-lint
       become: yes
