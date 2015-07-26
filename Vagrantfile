@@ -11,7 +11,7 @@ provision_script = <<SCRIPT
   git clone https://github.com/justcxx/dotfiles.git /var/tmp/dotfiles
   cd /var/tmp/dotfiles
   git pull -f
-  make
+  make vagrant
 SCRIPT
 
 Vagrant.configure(2) do |config|

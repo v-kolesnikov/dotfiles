@@ -13,4 +13,5 @@ script:
   - git clone https://github.com/justcxx/dotfiles.git 
   - cd dotfiles
   - pwd
-  - sudo make
+  - sudo make prepare
+  - make test
