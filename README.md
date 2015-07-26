@@ -7,4 +7,4 @@ Configuration files for editors and other UNIX tools. This is to make it easier 
 
     $ git clone https://github.com/justcxx/dotfiles.git
     $ cd dotfiles
-    $ sudo make
+    $ make
