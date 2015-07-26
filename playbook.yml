@@ -4,18 +4,27 @@
 
   tasks:
     - name: Install basic tools
-      apt: name={{ item }} state=latest #update_cache=yes
+      apt: name={{ item }} state=latest
+      become: yes
       with_items:
         - curl
         - git
         - vim
         - wget
-      become: yes
 
     - file: src={{ playbook_dir }}/{{ item }} dest=~/.{{ item }} state=link
       with_items:
         - gitconfig
         - vimrc 
+
+    - name: Install build-essential
+      apt: name={{ item }} state=latest
+      become: yes
+      with_items:
+        - build-essential
+        - libssl-dev
+        - libffi-dev
+        - python-dev
 
     # Vim. Vundle plugin manager
     - git:
@@ -34,6 +43,7 @@
 
     - name: Install Python modules with pip
       pip: name={{ item }} state=latest
+      become: yes
       with_items:
         - certifi
         - pyopenssl
@@ -41,5 +51,4 @@
         - pyasn1
         - pylint
         - ansible-lint
-      become: yes
       tags: python
