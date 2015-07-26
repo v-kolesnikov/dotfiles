@@ -42,6 +42,8 @@
 
     - name: Upgrade pip
       pip: name=pip extra_args='--upgrade'
+      become: yes
+      tags: python
 
     - name: Install Python modules with pip
       pip: name={{ item }} state=latest
