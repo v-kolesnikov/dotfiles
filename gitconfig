@@ -1,3 +1,7 @@
 [user]
 	email = re.vkolesnikov@gmail.com
 	name = kolesnikov
+[push]
+	default = tracking
+[core]
+	editor = vim
