@@ -25,10 +25,12 @@
 
     # Python
     - name: Install Python pip
-      apt: name={{ item }} state=latest
-      with_items:
-        - python-pip
+      easy_install: name=pip
       become: yes
+      tags: python
+
+    - name: Upgrade pip
+      pip: name=pip extra_args='--upgrade'
 
     - name: Install Python modules with pip
       pip: name={{ item }} state=latest
