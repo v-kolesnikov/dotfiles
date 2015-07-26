@@ -1,0 +1,14 @@
+---
+
+language: python
+
+before_install:
+
+install:
+
+script:
+  - rm -rf ~/.gitconfig
+  - git clone https://github.com/justcxx/dotfiles.git 
+  - cd dotfiles
+  - pwd
+  - sudo make
