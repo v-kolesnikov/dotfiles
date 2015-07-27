@@ -36,3 +36,5 @@ set shiftwidth=4
 colorscheme jellybeans
 
 nmap <F8> :TagbarToggle<CR>
+
+let g:syntastic_ruby_checkers = ['rubocop', 'mri']
