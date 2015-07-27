@@ -58,16 +58,28 @@
         - ansible-lint
       tags: python
 
-    - name: Check nvm node version
+    - name: Check nvm
+      stat: path=~/.nvm
+      register: nvm_path
+      tags: node
+
+    - name: Check node version
+      when: nvm_path.stat.exists
       command: node -v
       register: node_version
       ignore_errors: yes
       tags: node
 
+    - name: Check npm
+      when: nvm_path.stat.exists and node_version | success
+      stat: path=~/.nvm/versions/{{ node_version.stdout }}/bin/npm
+      register: npm_path
+      tags: node
+
     - name: Install npm packages
+      when: nvm_path.stat.exists and node_version | success and npm_path.stat.exists
       npm: name={{ item }} global=yes state=latest
         executable=~/.nvm/versions/{{ node_version.stdout }}/bin/npm
-      when: node_version | success
       with_items:
         - bower
         - js-yaml
