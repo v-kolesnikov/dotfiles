@@ -58,9 +58,16 @@
         - ansible-lint
       tags: python
 
+    - name: Check nvm node version
+      command: node -v
+      register: node_version
+      ignore_errors: yes
+      tags: node
+
     - name: Install npm packages
       npm: name={{ item }} global=yes state=latest
-      become: yes
+        executable=~/.nvm/versions/{{ node_version.stdout }}/bin/npm
+      when: node_version | success
       with_items:
         - bower
         - js-yaml
@@ -68,4 +75,4 @@
         - babel-eslint
         - eslint-plugin-react
         - jsonlint
-      tags: npm
+      tags: node

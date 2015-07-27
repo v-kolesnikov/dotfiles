@@ -4,14 +4,7 @@ language: python
 python:
   - "2.7"
 
-before_install:
-
-install:
-
 script:
   - rm -rf ~/.gitconfig
-  - git clone https://github.com/justcxx/dotfiles.git 
-  - cd dotfiles
-  - pwd
   - sudo make prepare
   - make test
