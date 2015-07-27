@@ -36,7 +36,6 @@
         - libffi-dev
         - python-dev
 
-    # Python
     - name: Install Python pip
       easy_install: name=pip
       become: yes
@@ -58,3 +57,15 @@
         - pylint
         - ansible-lint
       tags: python
+
+    - name: Install npm packages
+      npm: name={{ item }} global=yes state=latest
+      become: yes
+      with_items:
+        - bower
+        - js-yaml
+        - eslint
+        - babel-eslint
+        - eslint-plugin-react
+        - jsonlint
+      tags: npm
