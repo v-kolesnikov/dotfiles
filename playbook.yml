@@ -8,21 +8,23 @@
       become: yes
       with_items:
         - curl
+        - exuberant-ctags
         - git
         - vim
         - wget
 
-    - file: src={{ playbook_dir }}/{{ item }} dest=~/.{{ item }} state=link
+    - name: Set dotfiles (.vimrc, .gitconfig, etc)
+      file: src={{ playbook_dir }}/{{ item }} dest=~/.{{ item }} state=link
       with_items:
         - gitconfig
         - vimrc
       tags: vim
 
-     # Vim. Vundle plugin manager
-    - git:
+    - name: Vim Vundle plugin manager
+      git:
         repo: https://github.com/gmarik/Vundle.vim.git
         dest: ~/.vim/bundle/Vundle.vim
-        version: v0.10.2
+        version: master
       tags: vim
 
     - name: Install build-essential
