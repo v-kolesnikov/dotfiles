@@ -20,6 +20,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
+Plugin 'mbbill/undotree'
 
 Plugin 'nanotech/jellybeans.vim'
 
@@ -37,5 +38,14 @@ set shiftwidth=4
 colorscheme jellybeans
 
 nmap <F8> :TagbarToggle<CR>
+nnoremap <F5> :UndotreeToggle<cr>
+
+nmap <C-\> :NERDTreeFind<CR>
+nmap <silent> <leader><leader> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.pyc$']
 
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+
+au FileType ruby setl sw=2 sts=2 et
+au FileType javascript setl sw=2 sts=2 et
+au FileType yaml setl sw=2 sts=2 et
