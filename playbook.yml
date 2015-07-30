@@ -13,10 +13,9 @@
         - vim
         - wget
 
-    - name: Set dotfiles (.vimrc, .gitconfig, etc)
+    - name: Configure vim
       file: src={{ playbook_dir }}/{{ item }} dest=~/.{{ item }} state=link
       with_items:
-        - gitconfig
         - vimrc
       tags: vim
 
@@ -26,6 +25,12 @@
         dest: ~/.vim/bundle/Vundle.vim
         version: master
       tags: vim
+
+    - name: Configure git
+      file: src={{ playbook_dir }}/{{ item }} dest=~/.{{ item }} state=link
+      with_items:
+        - gitconfig
+      tags: git
 
     - name: Install build-essential
       apt: name={{ item }} state=latest
@@ -61,20 +66,20 @@
     - name: Check nvm
       stat: path=~/.nvm
       register: nvm_path
-      tags: node
+      tags: nodejs
 
     - name: Check node version
       when: nvm_path.stat.exists
       command: node -v
       register: node_version
       ignore_errors: yes
-      tags: node
+      tags: nodejs
 
     - name: Check npm
       when: nvm_path.stat.exists and node_version | success
       stat: path=~/.nvm/versions/{{ node_version.stdout }}/bin/npm
       register: npm_path
-      tags: node
+      tags: nodejs
 
     - name: Install npm packages
       when: nvm_path.stat.exists and node_version | success and npm_path.stat.exists
@@ -87,4 +92,4 @@
         - babel-eslint
         - eslint-plugin-react
         - jsonlint
-      tags: node
+      tags: nodejs
