@@ -48,6 +48,16 @@ set shiftwidth=4
 set t_Co=256
 colorscheme jellybeans
 
+" ================ Persistent Undo ==================
+" Keep undo history across sessions, by storing in file.
+" Only works all the time.
+if has('persistent_undo')
+  silent !mkdir ~/.vim/backups > /dev/null 2>&1
+  set undodir=~/.vim/backups
+  set undofile
+endif
+
+" ==================== KeyMap ========================
 nmap <F8> :TagbarToggle<CR>
 nnoremap <F5> :UndotreeToggle<cr>
 
@@ -66,6 +76,25 @@ nmap <silent> <leader><leader> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$']
 
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+
+" set text wrapping toggles
+nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
+
+" Allows you to enter sudo pass and save the file
+" when you forgot to open your file with sudo
+cmap w!! %!sudo tee > /dev/null null%
+
+" Allow to copy/paste between VIM instances
+" copy the current visual selection to ~/.vbuf
+vmap <Leader>y :w! ~/.vbuf<CR>
+" copy the current line to the buffer file if no visual selection
+nmap <Leader>y :.w! ~/.vbuf<CR>
+" paste the contents of the buffer file
+nmap <Leader>p :r ~/.vbuf<CR>
+
+" Automatically removing all trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+au BufRead,BufNewFile {Vagrantfile,Gemfile,Capfile} set ft=ruby
 
 au FileType ruby setl sw=2 sts=2 et
 au FileType javascript setl sw=2 sts=2 et
