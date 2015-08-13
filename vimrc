@@ -42,8 +42,16 @@ set cursorline
 set hidden
 set nowrap
 set number
+set hlsearch
+set ignorecase
+set smartcase
 set tabstop=4
 set shiftwidth=4
+set expandtab
+
+set nobackup
+set nowb
+set noswapfile
 
 set t_Co=256
 colorscheme jellybeans
@@ -74,6 +82,8 @@ nmap <leader>l mQviwu`Q
 nmap <C-\> :NERDTreeFind<CR>
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$']
+
+let g:easytags_async = 1
 
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 

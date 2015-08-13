@@ -5,3 +5,4 @@
 	default = tracking
 [core]
 	editor = vim
+	excludesfile = /home/justcxx/.gitignore_global
