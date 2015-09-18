@@ -31,6 +31,15 @@ Plugin 'chase/vim-ansible-yaml'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'othree/html5.vim'
 
+" Clojure
+Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-leiningen'
+Plugin 'tpope/vim-classpath'
+Plugin 'tpope/vim-fireplace'
+Plugin 'vim-scripts/paredit.vim'
+Plugin 'venantius/vim-eastwood'
+Plugin 'venantius/vim-cljfmt'
+
 " Themes
 Plugin 'nanotech/jellybeans.vim'
 
