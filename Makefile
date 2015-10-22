@@ -1,12 +1,16 @@
 install: prepare provision
 
 become=--ask-become-pass
-ansible=ansible-playbook $(CURDIR)/playbook.yml -i $(CURDIR)/inventory-local.ini -vv
+ansible=ansible-playbook $(CURDIR)/playbook.yml -i local
 
-prepare:
+install_ansible:
+	sudo apt-get install software-properties-common
+	sudo apt-add-repository ppa:ansible/ansible
 	sudo apt-get update
-	sudo apt-get -y install python-pip
-	sudo pip install ansible
+	sudo apt-get install ansible
+
+vim:
+	$(ansible) $(become) --tags=vim
 
 provision:
 	$(ansible) $(become)
@@ -18,4 +22,4 @@ test:
 	$(ansible)
 
 
-.PHONY: prepare 
+# .PHONY:
