@@ -1,0 +1,13 @@
+---
+
+- hosts: all
+  tasks:
+    - name: vim config
+      file: src={{ playbook_dir }}/files//vimrc dest=~/.vimrc state=link
+
+    - name: vim plugin manager
+      git:
+        repo: https://github.com/gmarik/Vundle.vim.git
+        dest: ~/.vim/bundle/Vundle.vim
+        version: master
+      tags: vim

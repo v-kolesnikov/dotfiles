@@ -1,25 +1,13 @@
-install: prepare provision
+congigure_git:
+				ansible-playbook $(CURDIR)/git.yml -i local
 
-become=--ask-become-pass
-ansible=ansible-playbook $(CURDIR)/playbook.yml -i local
+congigure_vim:
+				ansible-playbook $(CURDIR)/vim.yml -i local
 
 install_ansible:
-	sudo apt-get install software-properties-common
-	sudo apt-add-repository ppa:ansible/ansible
-	sudo apt-get update
-	sudo apt-get install ansible
-
-vim:
-	$(ansible) $(become) --tags=vim
-
-provision:
-	$(ansible) $(become)
-
-vagrant: prepare
-	$(ansible)
-
-test:
-	$(ansible)
-
+				sudo apt-get install software-properties-common
+				sudo apt-add-repository ppa:ansible/ansible
+				sudo apt-get update
+				sudo apt-get install ansible
 
 # .PHONY:
