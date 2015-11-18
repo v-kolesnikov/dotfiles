@@ -101,6 +101,9 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
+" Clojure tests
+nmap <Leader>r :RunTests<CR>
+
 nmap <C-\> :NERDTreeFind<CR>
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>
 
