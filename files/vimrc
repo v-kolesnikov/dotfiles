@@ -132,6 +132,10 @@ nmap <Leader>p :r ~/.vbuf<CR>
 
 " Automatically removing all trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Auto connect to nrepl
+autocmd User FireplacePreConnect call fireplace#register_port_file(expand('./nrepl-port'), '/')
+
 au BufRead,BufNewFile {Vagrantfile,Gemfile,Capfile} set ft=ruby
 
 au FileType ruby setl sw=2 sts=2 et
