@@ -22,6 +22,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'jpalardy/vim-slime'
 
 Plugin 'bling/vim-airline'
 Plugin 'majutsushi/tagbar'
@@ -117,6 +118,8 @@ let g:easytags_async = 1
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 
 let g:rspec_command = "Dispatch rspec {spec}"
+
+let g:slime_target = "tmux"
 
 " set text wrapping toggles
 nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
