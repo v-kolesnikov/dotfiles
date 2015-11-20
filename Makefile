@@ -1,8 +1,14 @@
-congigure_git:
+all: git vim tmux
+
+git:
 				ansible-playbook $(CURDIR)/git.yml -i local
 
-congigure_vim:
+vim:
 				ansible-playbook $(CURDIR)/vim.yml -i local
+
+tmux:
+				ansible-playbook $(CURDIR)/tmux.yml -i local
+
 
 install_ansible:
 				sudo apt-get install software-properties-common
