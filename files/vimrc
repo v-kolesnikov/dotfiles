@@ -29,6 +29,7 @@ Plugin 'bling/vim-airline'
 Plugin 'majutsushi/tagbar'
 Plugin 'mbbill/undotree'
 Plugin 'jgdavey/vim-blockle'
+Plugin 'jgdavey/tslime.vim'
 
 " Languages support
 Plugin 'chase/vim-ansible-yaml'
@@ -122,7 +123,7 @@ let g:easytags_async = 1
 
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 
-let g:rspec_command = "Dispatch rspec {spec}"
+let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
 
 let g:slime_target = "tmux"
 
