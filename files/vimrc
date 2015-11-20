@@ -35,6 +35,8 @@ Plugin 'jgdavey/tslime.vim'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'othree/html5.vim'
+Plugin 'tpope/vim-haml'
+Plugin 'slim-template/vim-slim'
 
 Plugin 'thoughtbot/vim-rspec'
 
