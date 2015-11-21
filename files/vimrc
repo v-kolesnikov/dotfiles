@@ -20,6 +20,7 @@ Plugin 'tpope/vim-rvm'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 
+Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -129,6 +130,9 @@ let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
 
 let g:slime_target = "tmux"
+
+let g:buffergator_viewport_split_policy = "B"
+let g:buffergator_sort_regime = "mru"
 
 " set text wrapping toggles
 nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
