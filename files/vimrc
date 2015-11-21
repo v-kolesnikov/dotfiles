@@ -69,6 +69,7 @@ set expandtab
 
 set splitbelow
 set splitright
+set diffopt+=vertical
 
 set nobackup
 set nowb
