@@ -20,17 +20,17 @@ Plugin 'tpope/vim-rvm'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 
+Plugin 'mileszs/ack.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'jpalardy/vim-slime'
+Plugin 'jgdavey/tslime.vim'
 
 Plugin 'bling/vim-airline'
 Plugin 'majutsushi/tagbar'
 Plugin 'mbbill/undotree'
-Plugin 'jgdavey/vim-blockle'
-Plugin 'jgdavey/tslime.vim'
+Plugin 'Valloric/MatchTagAlways'
 
 " Languages support
 Plugin 'chase/vim-ansible-yaml'
@@ -49,6 +49,10 @@ Plugin 'tpope/vim-fireplace'
 Plugin 'vim-scripts/paredit.vim'
 Plugin 'venantius/vim-eastwood'
 Plugin 'venantius/vim-cljfmt'
+
+" Tags support
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
 
 " Themes
 Plugin 'nanotech/jellybeans.vim'
@@ -102,10 +106,6 @@ map <C-h> <C-w><Left>
 nmap <leader>u mQviwU`Q
 nmap <leader>l mQviwu`Q
 
-" To save, ctrl-s.
-nmap <C-s> :w<CR>
-imap <C-s> <Esc>:w<CR>a
-
 " RSpec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
@@ -128,8 +128,6 @@ let g:easytags_async = 1
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 
 let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
-
-let g:slime_target = "tmux"
 
 let g:buffergator_viewport_split_policy = "B"
 let g:buffergator_sort_regime = "mru"
@@ -160,8 +158,3 @@ au BufRead,BufNewFile {Vagrantfile,Gemfile,Capfile} set ft=ruby
 au FileType ruby setl sw=2 sts=2 et
 au FileType javascript setl sw=2 sts=2 et
 au FileType yaml setl sw=2 sts=2 et
-
-" Allow us to use Ctrl-s and Ctrl-q as keybinds
-silent !stty -ixon
-" Restore default behaviour when leaving Vim.
-autocmd VimLeave * silent !stty ixon
