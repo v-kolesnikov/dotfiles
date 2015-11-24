@@ -1,13 +1,14 @@
-all: git vim tmux
+all:
+				ansible-playbook $(CURDIR)/dotfiles.yml -i local
 
 git:
-				ansible-playbook $(CURDIR)/git.yml -i local
+				ansible-playbook $(CURDIR)/dotfiles.yml -i local --tags=git
 
 vim:
-				ansible-playbook $(CURDIR)/vim.yml -i local
+				ansible-playbook $(CURDIR)/dotfiles.yml -i local --tags=vim
 
 tmux:
-				ansible-playbook $(CURDIR)/tmux.yml -i local
+				ansible-playbook $(CURDIR)/dotfiles.yml -i local --tags=tmux
 
 
 install_ansible:

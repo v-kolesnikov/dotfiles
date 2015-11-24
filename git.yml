@@ -1,6 +1,0 @@
----
-
-- hosts: all
-  tasks:
-    - name: .gitconfig
-      file: src={{ playbook_dir }}/files/gitconfig dest=~/.gitconfig state=link

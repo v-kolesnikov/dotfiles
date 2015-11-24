@@ -1,0 +1,26 @@
+---
+
+- hosts: all
+  tasks:
+    - name: .gitconfig
+      file: src={{ playbook_dir }}/files/gitconfig dest=~/.gitconfig state=link
+      tags: git
+
+    - name: .tmux.conf
+      file: src={{ playbook_dir }}/files/tmux.conf dest=~/.tmux.conf state=link
+      tags: tmux
+
+    - name: vim config
+      file: src={{ playbook_dir }}/files/vimrc dest=~/.vimrc state=link
+      tags: vim
+
+    - name: vim plugin manager
+      git:
+        repo: https://github.com/gmarik/Vundle.vim.git
+        dest: ~/.vim/bundle/Vundle.vim
+        version: master
+      tags: vim
+
+    - name: lein profiles
+      file: src={{ playbook_dir }}/files/profiles.clj dest=~/.lein/profiles.clj state=link force=true
+      tags: [clojure, lein]
