@@ -38,6 +38,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'othree/html5.vim'
 Plugin 'tpope/vim-haml'
 Plugin 'slim-template/vim-slim'
+Plugin 'tmux-plugins/vim-tmux'
 
 Plugin 'thoughtbot/vim-rspec'
 
