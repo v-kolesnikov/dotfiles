@@ -61,6 +61,7 @@ call vundle#end()
 
 filetype plugin indent on
 
+set lazyredraw
 set cursorline
 set hidden
 set nowrap
