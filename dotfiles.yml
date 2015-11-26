@@ -21,6 +21,10 @@
         version: master
       tags: vim
 
+    - name: .lein dir
+      file: path=~/.lein state=directory
+      tags: [clojure, lein]
+
     - name: lein profiles
-      file: src={{ playbook_dir }}/files/profiles.clj dest=~/.lein/profiles.clj state=link force=true
+      file: src={{ playbook_dir }}/files/profiles.clj dest=~/.lein/profiles.clj state=link force=yes
       tags: [clojure, lein]
