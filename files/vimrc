@@ -129,7 +129,13 @@ let NERDTreeIgnore = ['\.pyc$']
 
 let g:easytags_async = 1
 
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_wq = 0
+
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+let g:syntastic_haml_checkers = ['haml_lint', 'haml']
+let g:syntastic_slim_checkers = ['slim_lint', 'slimrb']
 
 let g:rspec_command = 'call Send_to_Tmux("clear\nrspec {spec}\n")'
 
