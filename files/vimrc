@@ -21,6 +21,7 @@ Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 
 Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
