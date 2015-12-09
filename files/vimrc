@@ -41,6 +41,7 @@ Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-markdown'
 Plugin 'slim-template/vim-slim'
 Plugin 'tmux-plugins/vim-tmux'
+Plugin 'Glench/Vim-Jinja2-Syntax'
 
 Plugin 'thoughtbot/vim-rspec'
 
