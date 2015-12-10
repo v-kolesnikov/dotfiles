@@ -54,6 +54,12 @@ Plugin 'vim-scripts/paredit.vim'
 Plugin 'venantius/vim-eastwood'
 Plugin 'venantius/vim-cljfmt'
 
+" Erlang
+Plugin 'vim-erlang/vim-erlang-runtime'
+Plugin 'vim-erlang/vim-erlang-compiler'
+Plugin 'vim-erlang/vim-erlang-omnicomplete'
+Plugin 'vim-erlang/vim-erlang-tags'
+
 " Tags support
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
