@@ -35,6 +35,11 @@
       file: src={{ playbook_dir }}/files/profiles.clj dest=~/.lein/profiles.clj state=link force=yes
       tags: [clojure, lein]
 
+    - name:
+      lineinfile: dest="~/.bash_profile" state=present create=yes
+        line="set -o vi"
+      tags: bash
+
     - name: bash ps1
       lineinfile: dest="~/.bash_profile" state=present create=yes
         line="export PS1='`if [ $? = 0 ]; then echo \"\[\033[01;32m\]✔\"; else echo \"\[\033[01;31m\]✘\"; fi` \[\033[01;32m\]\h\[\033[35m\]$(__git_ps1 \" %s\")\[\033[01;34m\] \W \[\033[01;30m\]>\[\033[00m\] '"
