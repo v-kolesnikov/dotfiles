@@ -1,0 +1,22 @@
+# vim:ft=ansible:
+---
+
+- hosts: all
+  tasks:
+
+    - name: add repository GPG key
+      apt_key: url='http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc' state=present
+      become: yes
+
+    - name: add repository
+      become: yes
+      apt_repository:
+        repo: 'deb http://packages.erlang-solutions.com/{{ ansible_distribution | lower }} {{ ansible_distribution_release | lower }} contrib'
+        state: present
+
+    - name: instal Erlang packages
+      become: yes
+      apt: name={{ item }} state=present
+      with_items:
+        - erlang
+        - erlang-manpages
