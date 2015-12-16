@@ -19,17 +19,18 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-rvm'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/syntastic'
 
+" Search and navigation
 Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'jgdavey/tslime.vim'
 
 Plugin 'bling/vim-airline'
 Plugin 'majutsushi/tagbar'
+Plugin 'jgdavey/tslime.vim'
 Plugin 'mbbill/undotree'
 Plugin 'Valloric/MatchTagAlways'
 
