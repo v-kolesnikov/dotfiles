@@ -29,6 +29,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 
 Plugin 'bling/vim-airline'
+Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'majutsushi/tagbar'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'mbbill/undotree'
