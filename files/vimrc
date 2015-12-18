@@ -45,8 +45,6 @@ Plugin 'slim-template/vim-slim'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 
-Plugin 'thoughtbot/vim-rspec'
-
 " Clojure
 Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-leiningen'
@@ -61,6 +59,10 @@ Plugin 'vim-erlang/vim-erlang-runtime'
 Plugin 'vim-erlang/vim-erlang-compiler'
 Plugin 'vim-erlang/vim-erlang-omnicomplete'
 Plugin 'vim-erlang/vim-erlang-tags'
+
+" Ruby
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'thoughtbot/vim-rspec'
 
 " Tags support
 Plugin 'xolox/vim-misc'
