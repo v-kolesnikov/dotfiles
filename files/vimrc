@@ -34,6 +34,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'mbbill/undotree'
 Plugin 'Valloric/MatchTagAlways'
+Plugin 'kana/vim-textobj-user'
 
 " Languages support
 Plugin 'chase/vim-ansible-yaml'
@@ -63,6 +64,7 @@ Plugin 'vim-erlang/vim-erlang-tags'
 " Ruby
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'nelstrom/vim-textobj-rubyblock'
 
 " Tags support
 Plugin 'xolox/vim-misc'
