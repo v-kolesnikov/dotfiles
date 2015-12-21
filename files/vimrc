@@ -65,6 +65,7 @@ Plugin 'vim-erlang/vim-erlang-tags'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'p0deje/vim-ruby-interpolation'
 
 " Tags support
 Plugin 'xolox/vim-misc'
