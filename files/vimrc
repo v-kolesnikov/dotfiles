@@ -48,6 +48,7 @@ Plugin 'Glench/Vim-Jinja2-Syntax'
 
 " Clojure
 Plugin 'guns/vim-clojure-static'
+Plugin 'guns/vim-slamhound'
 Plugin 'tpope/vim-leiningen'
 Plugin 'tpope/vim-classpath'
 Plugin 'tpope/vim-fireplace'
