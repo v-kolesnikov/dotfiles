@@ -6,17 +6,16 @@ let mapleader=","
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Plugin manager
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'tpope/vim-bundler'
+" General
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-rvm'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
@@ -28,6 +27,7 @@ Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 
+" Advanced
 Plugin 'bling/vim-airline'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'majutsushi/tagbar'
@@ -49,12 +49,12 @@ Plugin 'Glench/Vim-Jinja2-Syntax'
 " Clojure
 Plugin 'guns/vim-clojure-static'
 Plugin 'guns/vim-slamhound'
-Plugin 'tpope/vim-leiningen'
 Plugin 'tpope/vim-classpath'
 Plugin 'tpope/vim-fireplace'
-Plugin 'vim-scripts/paredit.vim'
+Plugin 'tpope/vim-salve'
 Plugin 'venantius/vim-eastwood'
 Plugin 'venantius/vim-cljfmt'
+Plugin 'vim-scripts/paredit.vim'
 
 " Erlang
 Plugin 'vim-erlang/vim-erlang-runtime'
@@ -62,9 +62,12 @@ Plugin 'vim-erlang/vim-erlang-compiler'
 Plugin 'vim-erlang/vim-erlang-omnicomplete'
 Plugin 'vim-erlang/vim-erlang-tags'
 
-" Ruby
+" Ruby, Rails
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'tpope/vim-rvm'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'p0deje/vim-ruby-interpolation'
 
