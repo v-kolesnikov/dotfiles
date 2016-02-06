@@ -5,9 +5,8 @@
                     [lein-vanity "0.2.0"]
                     [lein-cloverage "1.0.6"]
                     [jonase/eastwood "0.2.3"]]
-         :dependencies [[org.clojure/clojure "1.8.0"]
-                        [org.clojure/tools.trace "0.7.8"]
+         :dependencies [[org.clojure/tools.trace "0.7.8"]
                         [cljfmt "0.3.0"]
-                        [jonase/eastwood "0.2.2"]
+                        [jonase/eastwood "0.2.3"]
                         [slamhound "1.5.5"]]
          :aliases {"slamhound" ["run" "-m" "slam.hound"]}}}
