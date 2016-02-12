@@ -128,9 +128,9 @@ map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 
 " RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
+" map <Leader>t :call RunCurrentSpecFile()<CR> " conflict with buffergator
 map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
+" map <Leader>l :call RunLastSpec()<CR>        " conflict with lower word
 map <Leader>a :call RunAllSpecs()<CR>
 
 let g:rspec_command = 'call Send_to_Tmux("clear\nrspec {spec}\n")'
