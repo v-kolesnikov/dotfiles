@@ -35,6 +35,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'mbbill/undotree'
 Plugin 'Valloric/MatchTagAlways'
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'kana/vim-textobj-user'
 
 " Languages support
