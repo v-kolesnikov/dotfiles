@@ -49,6 +49,7 @@ Plugin 'tmux-plugins/vim-tmux'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 
 " Clojure
+Plugin 'guns/vim-clojure-highlight'
 Plugin 'guns/vim-clojure-static'
 Plugin 'guns/vim-slamhound'
 Plugin 'tpope/vim-classpath'
