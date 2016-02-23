@@ -36,6 +36,7 @@ Plugin 'jgdavey/tslime.vim'
 Plugin 'mbbill/undotree'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'Shougo/vimproc.vim'
 Plugin 'kana/vim-textobj-user'
 
 " Languages support
@@ -64,6 +65,13 @@ Plugin 'vim-erlang/vim-erlang-runtime'
 Plugin 'vim-erlang/vim-erlang-compiler'
 Plugin 'vim-erlang/vim-erlang-omnicomplete'
 Plugin 'vim-erlang/vim-erlang-tags'
+
+" Haskell
+Plugin 'neovimhaskell/haskell-vim'
+Plugin 'eagletmt/ghcmod-vim'
+Plugin 'eagletmt/neco-ghc'
+Plugin 'Twinside/vim-hoogle'
+Plugin 'mpickering/hlint-refactor-vim'
 
 " Ruby, Rails
 Plugin 'tpope/vim-bundler'
