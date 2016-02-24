@@ -20,6 +20,10 @@
       file: src={{ playbook_dir }}/files/gemrc dest=~/.gemrc state=link
       tags: [ruby, dotfiles]
 
+    - name: inputrc
+      file: src={{ playbook_dir }}/files/inputrc dest=~/.inputrc state=link
+      tags: bash
+
     - name: vim plugin manager
       git:
         repo: https://github.com/gmarik/Vundle.vim.git
@@ -34,16 +38,6 @@
     - name: lein profiles
       file: src={{ playbook_dir }}/files/profiles.clj dest=~/.lein/profiles.clj state=link force=yes
       tags: [clojure, lein]
-
-    - name:
-      lineinfile: dest="~/.bash_profile" state=present create=yes
-        line="set -o vi"
-      tags: bash
-
-    - name:
-      lineinfile: dest="~/.bash_profile" state=present create=yes
-        line="bind -m vi-insert "\C-l":clear-screen"
-      tags: bash
 
     - name: bash ps1
       lineinfile: dest="~/.bash_profile" state=present create=yes
