@@ -39,6 +39,9 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'kana/vim-textobj-user'
 
+" Tools integration
+Plugin 'hashivim/vim-vagrant'
+
 " Languages support
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'kchmck/vim-coffee-script'
