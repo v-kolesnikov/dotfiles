@@ -12,23 +12,24 @@
       file: src={{ playbook_dir }}/files/tmux.conf dest=~/.tmux.conf state=link
       tags: tmux
 
-    - name: vim config
-      file: src={{ playbook_dir }}/files/vimrc dest=~/.vimrc state=link
-      tags: vim
-
     - name: gemrc
       file: src={{ playbook_dir }}/files/gemrc dest=~/.gemrc state=link
-      tags: [ruby, dotfiles]
+      tags: ruby
 
     - name: inputrc
       file: src={{ playbook_dir }}/files/inputrc dest=~/.inputrc state=link
       tags: bash
+
+    - name: vim config
+      file: src={{ playbook_dir }}/files/vimrc dest=~/.vimrc state=link
+      tags: vim
 
     - name: vim plugin manager
       git:
         repo: https://github.com/gmarik/Vundle.vim.git
         dest: ~/.vim/bundle/Vundle.vim
         version: master
+        update: no
       tags: vim
 
     - name: .lein dir
