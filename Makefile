@@ -10,11 +10,11 @@ vim:
 tmux:
 				ansible-playbook $(CURDIR)/dotfiles.yml -i local --tags=tmux
 
-
 install_ansible:
 				sudo apt-get install software-properties-common
 				sudo apt-add-repository ppa:ansible/ansible
 				sudo apt-get update
 				sudo apt-get install ansible
 
-# .PHONY:
+test:
+				ansible-playbook $(CURDIR)/dotfiles.yml -i local --check
