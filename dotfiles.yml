@@ -1,9 +1,11 @@
-# vim:ft=ansible:
-
 ---
 
 - hosts: all
   tasks:
+    - name: git
+      apt: name=git state=present
+      become: yes
+
     - name: .gitconfig
       file: src={{ playbook_dir }}/files/gitconfig dest=~/.gitconfig state=link
       tags: git
