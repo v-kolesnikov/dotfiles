@@ -1,9 +1,8 @@
-# vim:ft=ansible:
 ---
 
 - hosts: all
+  gather_facts: no
   tasks:
-
     - name: add repository GPG key
       apt_key: url='http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc' state=present
       become: yes
