@@ -1,14 +1,10 @@
 ---
 
+sudo: false
+
 language: python
 
 python: "2.7"
-
-cache: pip
-
-before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install -qq python-apt
 
 install:
   - pip install ansible

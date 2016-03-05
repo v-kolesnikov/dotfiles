@@ -15,6 +15,6 @@ Vagrant.configure(VAGRANT_API_VERSION) do |config|
   end
 
   config.vm.provision 'ansible_local' do |ansible|
-    ansible.playbook = 'dotfiles.yml'
+    ansible.playbook = 'vagrant.yml'
   end
 end

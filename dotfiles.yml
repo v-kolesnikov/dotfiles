@@ -1,11 +1,8 @@
 ---
 
 - hosts: all
+  gather_facts: no
   tasks:
-    - name: git
-      apt: name=git state=present
-      become: yes
-
     - name: .gitconfig
       file: src={{ playbook_dir }}/files/gitconfig dest=~/.gitconfig state=link force=true
       tags: git

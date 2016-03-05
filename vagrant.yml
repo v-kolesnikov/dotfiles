@@ -1,0 +1,10 @@
+---
+
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: git
+      apt: name=git state=present
+      become: yes
+
+- include: dotfiles.yml
