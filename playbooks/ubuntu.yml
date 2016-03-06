@@ -1,0 +1,17 @@
+- name: daily unix tools
+  apt: name={{ item }} state=present
+  with_items:
+    - ack-grep
+    - curl
+    - httpie
+    - nmap
+    - exuberant-ctags
+    - silversearcher-ag
+
+- name: python tools
+  apt: name={{ item }} state=present
+  with_items:
+    - python-apt
+    - python-dev
+    - python-setuptools
+  tags: python

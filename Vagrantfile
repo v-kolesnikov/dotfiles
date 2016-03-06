@@ -15,6 +15,7 @@ Vagrant.configure(VAGRANT_API_VERSION) do |config|
   end
 
   config.vm.provision 'ansible_local' do |ansible|
-    ansible.playbook = 'vagrant.yml'
+    ansible.playbook = 'playbook.yml'
+    ansible.tags = ENV['TAGS']
   end
 end
