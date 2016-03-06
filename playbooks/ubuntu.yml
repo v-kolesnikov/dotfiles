@@ -4,6 +4,7 @@
     - ack-grep
     - curl
     - httpie
+    - htop
     - nmap
     - exuberant-ctags
     - silversearcher-ag
