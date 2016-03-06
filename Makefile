@@ -8,4 +8,5 @@ install_ansible:
 				sudo apt-get install ansible
 
 test:
-				ansible-playbook $(CURDIR)/playbook.yml -i local --check --tags=dotfiles
+				ansible-lint playbook.yml
+				ansible-playbook playbook.yml -i local --check --tags=dotfiles
