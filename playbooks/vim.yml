@@ -1,0 +1,12 @@
+- name: vim config
+  file: src={{ playbook_dir }}/files/vimrc dest=~/.vimrc state=link force=true
+  tags: vim
+
+- name: vim plugin manager
+  git:
+    repo: "https://github.com/gmarik/Vundle.vim.git"
+    dest: ~/.vim/bundle/Vundle.vim
+    version: master
+    update: no
+  tags: vim
+

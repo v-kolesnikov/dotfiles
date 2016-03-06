@@ -1,0 +1,7 @@
+- easy_install: name=pip
+
+- pip: name={{ item }} state=latest
+  with_items:
+    - ansible_lint
+    - youtube-dl
+

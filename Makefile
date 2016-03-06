@@ -1,5 +1,5 @@
 install:
-				ansible-playbook $(CURDIR)/dotfiles.yml -i local
+				ansible-playbook playbook.yml -i local
 
 install_ansible:
 				sudo apt-get install software-properties-common
@@ -8,4 +8,5 @@ install_ansible:
 				sudo apt-get install ansible
 
 test:
-				ansible-playbook $(CURDIR)/dotfiles.yml -i local --check
+				ansible-lint playbook.yml
+				ansible-playbook playbook.yml -i local --check --tags=dotfiles
