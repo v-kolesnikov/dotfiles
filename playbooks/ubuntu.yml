@@ -8,6 +8,7 @@
     - nmap
     - exuberant-ctags
     - silversearcher-ag
+    - vim-nox
 
 - name: python tools
   apt: name={{ item }} state=present
