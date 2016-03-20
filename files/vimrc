@@ -26,6 +26,7 @@ Plugin 'rking/ag.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Shougo/neocomplete'
 
 " Advanced
 Plugin 'vim-airline/vim-airline'
@@ -164,6 +165,8 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 let g:rspec_command = 'call Send_to_Tmux("clear\nrspec {spec}\n")'
 
+set completefunc=syntaxcomplete#Complete
+
 " Clojure
 nmap <Leader>r :RunTests<CR>
 autocmd User FireplacePreConnect call fireplace#register_port_file(expand('./nrepl-port'), '/')
@@ -220,3 +223,7 @@ au FileType javascript setl sw=2 sts=2 et
 au FileType yaml setl sw=2 sts=2 et
 
 :command JsonFormat %!python -m json.tool
+
+" Disable haskell-vim omnifunc
+let g:haskellmode_completion_ghc = 0
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
