@@ -165,7 +165,7 @@ map <Leader>s :call RunNearestSpec()<CR>
 " map <Leader>l :call RunLastSpec()<CR>        " conflict with lower word
 map <Leader>a :call RunAllSpecs()<CR>
 
-let g:rspec_command = 'call Send_to_Tmux("clear\nrspec {spec}\n")'
+let g:rspec_command = 'call Send_to_Tmux("clear\n bundle exec rspec {spec}\n")'
 
 set completefunc=syntaxcomplete#Complete
 
