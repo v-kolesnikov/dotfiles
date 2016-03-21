@@ -138,6 +138,7 @@ if executable('ag')
   nnoremap \ :Ag<SPACE>
 endif
 
+let g:ctrlp_regexp = 1
 " ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
