@@ -1,0 +1,8 @@
+AllCops:
+  UseCache: false
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  ExtraDetails: true
+
+Style/Documentation:
+  Enabled: false
