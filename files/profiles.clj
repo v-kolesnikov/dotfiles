@@ -1,4 +1,4 @@
-{:user  {:plugins  [[lein-ancient "0.6.8"]
+{:user  {:plugins  [[lein-ancient "0.6.9"]
                     [lein-cljfmt "0.4.1"]
                     [lein-cloverage "1.0.6"]
                     [lein-kibit "0.1.2"]
