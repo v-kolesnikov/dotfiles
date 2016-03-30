@@ -31,6 +31,6 @@
   tags: ruby
 
 - name: bash ps1
-  lineinfile: dest="~/.bash_profile" state=present create=yes
+  lineinfile: dest="~/.profile" state=present create=yes
     line="export PS1='`if [ $? = 0 ]; then echo \"\[\033[01;32m\]✔\"; else echo \"\[\033[01;31m\]✘\"; fi` \[\033[01;32m\]\h\[\033[35m\]$(__git_ps1 \" %s\")\[\033[01;34m\] \W \[\033[01;30m\]>\[\033[00m\] '"
   tags: bash
