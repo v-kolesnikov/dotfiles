@@ -42,6 +42,7 @@ Plugin 'kana/vim-textobj-user'
 
 " Tools integration
 Plugin 'hashivim/vim-vagrant'
+Plugin 'Floobits/floobits-vim'
 
 " Languages support
 Plugin 'chase/vim-ansible-yaml'
