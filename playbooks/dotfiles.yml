@@ -30,6 +30,11 @@
   file: src={{ playbook_dir }}/files/rubocop.yml dest=~/.rubocop.yml state=link force=yes
   tags: ruby
 
+- block:
+  - file: path=~/.vagrant.d state=directory
+  - file: src={{ playbook_dir }}/files/vagrant.d/Vagrantfile dest=~/.vagrant.d/Vagrantfile state=link force=yes
+  tags: vagrant
+
 - name: bash ps1
   lineinfile: dest="~/.profile" state=present create=yes
     line="export PS1='`if [ $? = 0 ]; then echo \"\[\033[01;32m\]✔\"; else echo \"\[\033[01;31m\]✘\"; fi` \[\033[01;32m\]\h\[\033[35m\]$(__git_ps1 \" %s\")\[\033[01;34m\] \W \[\033[01;30m\]>\[\033[00m\] '"
