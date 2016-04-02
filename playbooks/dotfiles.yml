@@ -10,12 +10,11 @@
   file: src={{ playbook_dir }}/files/inputrc dest=~/.inputrc state=link force=yes
   tags: bash
 
-- name: .lein dir
-  file: path=~/.lein state=directory
-  tags: [clojure, lein]
-
-- name: .lein profiles
-  file: src={{ playbook_dir }}/files/profiles.clj dest=~/.lein/profiles.clj state=link force=yes
+- block:
+  - name: .lein
+    file: path=~/.lein state=directory
+  - name: .lein/profiles.clj
+    file: src={{ playbook_dir }}/files/profiles.clj dest=~/.lein/profiles.clj state=link force=yes
   tags: [clojure, lein]
 
 - name: .gemrc
@@ -31,8 +30,10 @@
   tags: ruby
 
 - block:
-  - file: path=~/.vagrant.d state=directory
-  - file: src={{ playbook_dir }}/files/vagrant.d/Vagrantfile dest=~/.vagrant.d/Vagrantfile state=link force=yes
+  - name: .vagrant.d
+    file: path=~/.vagrant.d state=directory
+  - name: .vagrant.d/Vagrantfile
+    file: src={{ playbook_dir }}/files/vagrant.d/Vagrantfile dest=~/.vagrant.d/Vagrantfile state=link force=yes
   tags: vagrant
 
 - name: bash ps1
