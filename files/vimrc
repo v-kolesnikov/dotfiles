@@ -25,6 +25,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'jasoncodes/ctrlp-modified.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Shougo/neocomplete'
 
@@ -188,6 +189,10 @@ noremap ,h1 :set hlsearch! hlsearch?<CR>
 
 " set text wrapping toggles
 nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
+
+" ctrlp git modified
+map <Leader>m :CtrlPModified<CR>
+map <Leader>M :CtrlPBranch<CR>
 
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_always_populate_loc_list = 1
