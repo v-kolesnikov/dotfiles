@@ -43,7 +43,7 @@ Plugin 'kana/vim-textobj-user'
 
 " Tools integration
 Plugin 'hashivim/vim-vagrant'
-Plugin 'Floobits/floobits-vim'
+" Plugin 'Floobits/floobits-vim'
 
 " Languages support
 Plugin 'chase/vim-ansible-yaml'
@@ -66,18 +66,18 @@ Plugin 'venantius/vim-eastwood'
 Plugin 'venantius/vim-cljfmt'
 Plugin 'vim-scripts/paredit.vim'
 
-" Erlang
-Plugin 'vim-erlang/vim-erlang-runtime'
-Plugin 'vim-erlang/vim-erlang-compiler'
-Plugin 'vim-erlang/vim-erlang-omnicomplete'
-Plugin 'vim-erlang/vim-erlang-tags'
+" " Erlang
+" Plugin 'vim-erlang/vim-erlang-runtime'
+" Plugin 'vim-erlang/vim-erlang-compiler'
+" Plugin 'vim-erlang/vim-erlang-omnicomplete'
+" Plugin 'vim-erlang/vim-erlang-tags'
 
-" Haskell
-Plugin 'neovimhaskell/haskell-vim'
-Plugin 'eagletmt/ghcmod-vim'
-Plugin 'eagletmt/neco-ghc'
-Plugin 'Twinside/vim-hoogle'
-Plugin 'mpickering/hlint-refactor-vim'
+" " Haskell
+" Plugin 'neovimhaskell/haskell-vim'
+" Plugin 'eagletmt/ghcmod-vim'
+" Plugin 'eagletmt/neco-ghc'
+" Plugin 'Twinside/vim-hoogle'
+" Plugin 'mpickering/hlint-refactor-vim'
 
 " Ruby, Rails
 Plugin 'tpope/vim-bundler'
@@ -89,9 +89,9 @@ Plugin 'tpope/vim-rvm'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'p0deje/vim-ruby-interpolation'
 
-" Tags support
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
+" " Tags support
+" Plugin 'xolox/vim-misc'
+" Plugin 'xolox/vim-easytags'
 
 " Themes
 Plugin 'nanotech/jellybeans.vim'
