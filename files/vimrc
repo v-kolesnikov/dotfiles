@@ -21,6 +21,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 
 " Search and navigation
+Plugin 'dyng/ctrlsf.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
@@ -194,6 +195,16 @@ nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
 " ctrlp git modified
 map <Leader>m :CtrlPModified<CR>
 map <Leader>M :CtrlPBranch<CR>
+
+" CtrlSF mapping
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>f <Plug>CtrlSFVwordPath
+vmap     <C-F>F <Plug>CtrlSFVwordExec
+nmap     <C-F>n <Plug>CtrlSFCwordPath
+nmap     <C-F>p <Plug>CtrlSFPwordPath
+nnoremap <C-F>o :CtrlSFOpen<CR>
+nnoremap <C-F>t :CtrlSFToggle<CR>
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_always_populate_loc_list = 1
