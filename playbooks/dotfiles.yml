@@ -29,6 +29,10 @@
   file: src={{ playbook_dir }}/files/rubocop.yml dest=~/.rubocop.yml state=link force=yes
   tags: ruby
 
+- name: .eslintrc.yml
+  file: src={{ playbook_dir }}/files/eslintrc.yml dest=~/.eslintrc.yml state=link force=yes
+  tags: js
+
 - block:
   - name: .vagrant.d
     file: path=~/.vagrant.d state=directory
