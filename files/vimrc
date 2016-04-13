@@ -22,8 +22,6 @@ Plugin 'scrooloose/syntastic'
 
 " Search and navigation
 Plugin 'dyng/ctrlsf.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'rking/ag.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'jasoncodes/ctrlp-modified.vim'
@@ -137,9 +135,6 @@ if executable('ag')
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
-
-  " bind \ (backward slash) to grep shortcut
-  nnoremap \ :Ag<SPACE>
 endif
 
 let g:ctrlp_regexp = 1
@@ -241,8 +236,6 @@ au BufRead,BufNewFile {Capfile,Gemfile,Guardfile,Vagrantfile,*.prawn} set ft=rub
 au FileType ruby setl sw=2 sts=2 et
 au FileType javascript setl sw=2 sts=2 et
 au FileType yaml setl sw=2 sts=2 et
-
-:command JsonFormat %!python -m json.tool
 
 " Disable haskell-vim omnifunc
 let g:haskellmode_completion_ghc = 0
