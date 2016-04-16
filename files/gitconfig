@@ -12,6 +12,7 @@
     pf = push --force-with-lease
     st = status
     br = branch
+    sdiff = diff --staged
     tree = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%x09%h %Creset%ad%Cblue%d %Creset %s %C(bold)(%an)%Creset\"
     type = cat-file -t
     dump = cat-file -p
