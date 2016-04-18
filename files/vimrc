@@ -228,6 +228,8 @@ nmap <Leader>y :.w! ~/.vbuf<CR>
 " paste the contents of the buffer file
 nmap <Leader>p :r ~/.vbuf<CR>
 
+set pastetoggle=<F2>
+
 " Automatically removing all trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
