@@ -54,6 +54,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'slim-template/vim-slim'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'Glench/Vim-Jinja2-Syntax'
+Plugin 'lmeijvogel/vim-yaml-helper'
 
 " Clojure
 Plugin 'guns/vim-clojure-highlight'
