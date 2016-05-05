@@ -1,0 +1,6 @@
+- gem: name={{ item }} state=latest
+  with_items:
+    - foreman
+    - rubocop
+  tags: ruby
+

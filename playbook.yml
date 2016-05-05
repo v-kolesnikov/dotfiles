@@ -18,6 +18,10 @@
       become: yes
       tags: ubuntu
 
+    - include: playbooks/gem.yml
+      become: yes
+      tags: ruby
+
     - include: playbooks/pip.yml
       become: yes
       tags: python, pip
