@@ -26,7 +26,11 @@ Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'jasoncodes/ctrlp-modified.vim'
 Plugin 'scrooloose/nerdtree'
+
+" Autocomplete
 Plugin 'Shougo/neocomplete'
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
 
 " Advanced
 Plugin 'vim-airline/vim-airline'
