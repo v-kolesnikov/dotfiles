@@ -3,4 +3,22 @@ Vagrant.configure(2) do |config|
   config.vm.provider 'virtualbox' do |vb|
     vb.cpus = 4
   end
+
+  if ENV['DOTFILES']
+    config.vm.provision type: 'shell', inline: <<-SHELL
+	  sudo apt-get update
+	  sudo apt-get install -y git
+	  mkdir -p ~/.ssh
+	  chmod 700 ~/.ssh
+	  ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+	  ssh -T git@github.com
+	  git clone git@github.com:justcxx/dotfiles.git
+    SHELL
+
+    config.vm.provision 'dotfiles', type: 'ansible_local' do |ansible|
+      ansible.playbook = 'playbook.yml'
+      ansible.provisioning_path = '/home/vagrant/dotfiles'
+      ansible.tags = %w(git, dotfiles, vim)
+    end
+  end
 end
