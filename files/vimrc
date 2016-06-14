@@ -84,6 +84,12 @@ Plugin 'vim-scripts/paredit.vim'
 " Plugin 'Twinside/vim-hoogle'
 " Plugin 'mpickering/hlint-refactor-vim'
 
+" JavaScript
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'mtscout6/vim-cjsx'
+Plugin 'moll/vim-node'
+
 " Ruby, Rails
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-rails'
