@@ -5,15 +5,18 @@ Vagrant.configure(2) do |config|
   end
 
   if ENV['DOTFILES']
-    config.vm.provision 'dotfiles-fetch', type: 'shell', inline: <<-SHELL
-	  sudo apt-get update
-	  sudo apt-get install -y git
-	  mkdir -p ~/.ssh
-	  chmod 700 ~/.ssh
-	  ssh-keyscan -H github.com >> ~/.ssh/known_hosts
-	  ssh -T git@github.com
-	  git clone git@github.com:justcxx/dotfiles.git
-    SHELL
+    config.vm.provision 'dotfiles-fetch', type: 'shell' do |shell|
+      shell.privileged = false
+      shell.inline = <<-SHELL
+        sudo apt-get update
+        sudo apt-get install -y git
+        mkdir -p ~/.ssh
+        chmod 700 ~/.ssh
+        ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+        ssh -T git@github.com
+        git clone git@github.com:justcxx/dotfiles.git
+      SHELL
+    end
 
     config.vm.provision 'dotfiles-setup', type: 'ansible_local' do |ansible|
       ansible.playbook = 'playbook.yml'
