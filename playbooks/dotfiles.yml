@@ -40,7 +40,16 @@
     file: src={{ playbook_dir }}/files/vagrant.d/Vagrantfile dest=~/.vagrant.d/Vagrantfile state=link force=yes
   tags: vagrant
 
-- name: bash ps1
-  lineinfile: dest="~/.profile" state=present create=yes
-    line="export PS1='`if [ $? = 0 ]; then echo \"\[\033[01;32m\]✔\"; else echo \"\[\033[01;31m\]✘\"; fi` \[\033[01;32m\]\h\[\033[35m\]$(__git_ps1 \" %s\")\[\033[01;34m\] \W \[\033[01;30m\]>\[\033[00m\] '"
+- name: bash profile
+  blockinfile:
+    dest: ~/.bash_profile
+    block: |
+      export {{ item }}
+    marker: "# {mark} ANSIBLE MANAGED BLOCK {{ item }}"
+    state: present
+    create: yes
+    backup: yes
+  with_items:
+    - EDITOR=vim
+    - PS1='$(__git_ps1) \W\$ '
   tags: bash
