@@ -5,6 +5,7 @@
 	default = tracking
 [core]
 	editor = vim
+	excludesfile = ~/.gitignore_global
 [alias]
     co = checkout
     ci = commit
