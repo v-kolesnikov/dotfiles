@@ -3,6 +3,8 @@
 	name = V.Kolesnikov
 [push]
 	default = tracking
+[diff]
+    compactionHeuristic = true
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore_global
