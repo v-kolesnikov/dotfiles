@@ -52,6 +52,7 @@ Plugin 'hashivim/vim-vagrant'
 " Languages support
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'elixir-lang/vim-elixir'
 Plugin 'othree/html5.vim'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-markdown'
