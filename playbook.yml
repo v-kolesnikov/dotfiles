@@ -8,15 +8,15 @@
       become: yes
       tags: git
 
-    - include: playbooks/vim.yml
-      tags: dotfiles, vim
-
-    - include: playbooks/dotfiles.yml
-      tags: dotfiles
-
     - include: playbooks/ubuntu.yml
       become: yes
       tags: ubuntu
+
+    - include: playbooks/nvim.yml
+      tags: nvim
+
+    - include: playbooks/dotfiles.yml
+      tags: dotfiles
 
     - include: playbooks/gem.yml
       become: yes

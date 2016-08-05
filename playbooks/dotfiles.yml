@@ -43,13 +43,14 @@
 - name: bash profile
   blockinfile:
     dest: ~/.bash_profile
-    block: |
-      export {{ item }}
+    block: "{{ item }}"
     marker: "# {mark} ANSIBLE MANAGED BLOCK {{ item }}"
     state: present
     create: yes
     backup: yes
   with_items:
-    - EDITOR=vim
-    - PS1='$(__git_ps1) \W\$ '
+    - alias vi='nvim'
+    - alias vim='nvim'
+    - export EDITOR=nvim
+    - export PS1='$(__git_ps1) \W\$ '
   tags: bash
