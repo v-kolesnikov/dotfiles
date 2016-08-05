@@ -6,6 +6,8 @@ language: python
 
 python: "2.7"
 
+cache: pip
+
 install:
   - pip install ansible
   - pip install ansible-lint
