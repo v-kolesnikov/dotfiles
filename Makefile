@@ -12,4 +12,4 @@ install_ansible:
 
 test:
 				ansible-lint playbook.yml
-				ansible-playbook playbook.yml -i local --check --tags=dotfiles
+				ansible-playbook playbook.yml -i local --check --tags=dotfiles --skip-tags=bash

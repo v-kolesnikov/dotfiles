@@ -40,7 +40,7 @@
     file: src={{ playbook_dir }}/files/vagrant.d/Vagrantfile dest=~/.vagrant.d/Vagrantfile state=link force=yes
   tags: vagrant
 
-- name: bash profile
+- name: .bash_profile
   blockinfile:
     dest: ~/.bash_profile
     block: "{{ item }}"
