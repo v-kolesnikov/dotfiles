@@ -17,11 +17,3 @@
 
     - include: playbooks/dotfiles.yml
       tags: dotfiles
-
-    - include: playbooks/gem.yml
-      become: yes
-      tags: ruby
-
-    - include: playbooks/pip.yml
-      become: yes
-      tags: python, pip

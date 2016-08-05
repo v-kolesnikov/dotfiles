@@ -2,9 +2,9 @@
   - name: add ppa
     apt_repository: repo='ppa:neovim-ppa/unstable' state=present
   - name: install nvim
-    apt: name=neovim state=latest
+    apt: name=neovim state=present
   - name: install nvim python-client
-    pip: name=neovim state=latest
+    pip: name=neovim state=present
   become: true
 
 - name: prepare config directory
