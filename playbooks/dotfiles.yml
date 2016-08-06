@@ -2,6 +2,10 @@
   file: src={{ playbook_dir }}/files/gitconfig dest=~/.gitconfig state=link force=yes
   tags: git
 
+- name: .gitignore_global
+  file: src={{ playbook_dir }}/files/gitignore_global dest=~/.gitignore_global state=link force=yes
+  tags: git
+
 - name: .tmux.conf
   file: src={{ playbook_dir }}/files/tmux.conf dest=~/.tmux.conf state=link force=yes
   tags: tmux
