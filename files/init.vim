@@ -11,10 +11,10 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
+Plug 'neomake/neomake'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'scrooloose/syntastic'
 
 " Search and navigation
 Plug 'dyng/ctrlsf.vim'
@@ -212,15 +212,11 @@ nnoremap <C-F>o :CtrlSFOpen<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_wq = 0
+" === Neomake config ===
+let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
 
-let g:syntastic_ruby_checkers = ['rubocop', 'mri']
-let g:syntastic_haml_checkers = ['haml_lint', 'haml']
-let g:syntastic_slim_checkers = ['slim_lint', 'slimrb']
-
-let g:syntastic_javascript_checkers = ['eslint']
+autocmd! BufWritePost * Neomake
+" === End Neomake config ===
 
 let g:buffergator_viewport_split_policy = "B"
 let g:buffergator_sort_regime = "mru"
