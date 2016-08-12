@@ -96,7 +96,6 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'sunaku/vim-ruby-minitest'
 Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-rvm'
-Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'p0deje/vim-ruby-interpolation'
 
 " " Tags support
