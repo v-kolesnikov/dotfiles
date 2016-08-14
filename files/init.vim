@@ -242,6 +242,7 @@ set pastetoggle=<F2>
 autocmd BufWritePre * :%s/\s\+$//e
 
 au BufRead,BufNewFile {Capfile,Gemfile,Guardfile,Vagrantfile,*.prawn} set ft=ruby
+au BufRead,BufNewFile {.babelrc,.eslintrc} set ft=json
 
 au BufRead,BufNewFile *.md setlocal spell
 au FileType gitcommit setlocal spell
