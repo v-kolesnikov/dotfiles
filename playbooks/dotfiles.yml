@@ -47,14 +47,19 @@
 - name: .bash_profile
   blockinfile:
     dest: ~/.bash_profile
-    block: "{{ item }}"
-    marker: "# {mark} ANSIBLE MANAGED BLOCK {{ item }}"
+    marker: "# {mark} ANSIBLE MANAGED BLOCK"
     state: present
     create: yes
     backup: yes
-  with_items:
-    - alias vi='nvim'
-    - alias vim='nvim'
-    - export EDITOR=nvim
-    - export PS1='$(__git_ps1) \W\$ '
+    content: |
+      export EDITOR=nvim
+      export PS1='$(__git_ps1) \W\$ '
+
+      alias vi='nvim'
+      alias vim='nvim'
+
+      function jcurl() {
+        curl "$@" | json | pygmentize -l igor
+      }
+      export -f jcurl
   tags: bash
