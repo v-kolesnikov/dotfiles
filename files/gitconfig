@@ -4,18 +4,18 @@
 [push]
 	default = tracking
 [diff]
-    compactionHeuristic = true
+	compactionHeuristic = true
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore_global
 [alias]
-    co = checkout
-    ci = commit
-    ca = commit --amend
-    pf = push --force-with-lease
-    st = status
-    br = branch
-    sdiff = diff --staged
-    tree = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%x09%h %Creset%ad%Cblue%d %Creset %s %C(bold)(%an)%Creset\"
-    type = cat-file -t
-    dump = cat-file -p
+	co = checkout
+	ci = commit
+	ca = commit --amend
+	pf = push --force-with-lease
+	st = status
+	br = branch
+	sdiff = diff --staged
+	tree = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%x09%h %Creset%ad%Cblue%d %Creset %s %C(bold)(%an)%Creset\"
+	type = cat-file -t
+	dump = cat-file -p
