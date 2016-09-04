@@ -48,7 +48,6 @@ Plug 'hashivim/vim-vagrant'
 " Languages support
 Plug 'chase/vim-ansible-yaml'
 Plug 'kchmck/vim-coffee-script'
-Plug 'elixir-lang/vim-elixir'
 Plug 'othree/html5.vim'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-markdown'
@@ -69,6 +68,10 @@ Plug 'tpope/vim-salve'
 Plug 'venantius/vim-eastwood'
 Plug 'venantius/vim-cljfmt'
 Plug 'vim-scripts/paredit.vim'
+
+" Elixir
+Plug 'elixir-lang/vim-elixir'
+Plug 'slashmili/alchemist.vim'
 
 " " Erlang
 " Plug 'vim-erlang/vim-erlang-runtime'
