@@ -46,6 +46,7 @@ Plug 'kana/vim-textobj-user'
 " Tools integration
 Plug 'hashivim/vim-vagrant'
 " Plug 'Floobits/floobits-vim'
+Plug 'wfleming/vim-codeclimate'
 
 " Languages support
 Plug 'chase/vim-ansible-yaml'
