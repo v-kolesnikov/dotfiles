@@ -18,7 +18,7 @@ Plug 'tpope/vim-surround'
 
 " Search and navigation
 Plug 'dyng/ctrlsf.vim'
-Plug 'jeetsukumaran/vim-buffergator'
+Plug 'jlanzarotta/bufexplorer'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jasoncodes/ctrlp-modified.vim'
 Plug 'scrooloose/nerdtree'
