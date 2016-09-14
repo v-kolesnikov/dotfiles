@@ -45,7 +45,6 @@ Plug 'kana/vim-textobj-user'
 
 " Tools integration
 Plug 'hashivim/vim-vagrant'
-" Plug 'Floobits/floobits-vim'
 Plug 'wfleming/vim-codeclimate'
 
 " Languages support
@@ -165,7 +164,6 @@ endif
 " ==================== KeyMap ========================
 nmap <F8> :TagbarToggle<CR>
 nnoremap <F5> :UndotreeToggle<cr>
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " Map ctrl-movement keys to window switching
 map <C-k> <C-w><Up>
@@ -221,9 +219,6 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 
 autocmd! BufWritePost * Neomake
 " === End Neomake config ===
-
-let g:buffergator_viewport_split_policy = "B"
-let g:buffergator_sort_regime = "mru"
 
 let g:markdown_fenced_languages = ['clojure', 'ruby']
 
