@@ -33,7 +33,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'airblade/vim-gitgutter'
+Plug 'kassio/neoterm'
 Plug 'majutsushi/tagbar'
+Plug 'janko-m/vim-test'
 Plug 'jgdavey/tslime.vim'
 Plug 'mbbill/undotree'
 " Plug 'Valloric/MatchTagAlways'
@@ -171,13 +173,12 @@ map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 nnoremap <silent> <bs> <C-w><Left>
 
-" RSpec.vim mappings
-" map <Leader>t :call RunCurrentSpecFile()<CR> " conflict with buffergator
-map <Leader>s :call RunNearestSpec()<CR>
-" map <Leader>l :call RunLastSpec()<CR>        " conflict with lower word
-map <Leader>a :call RunAllSpecs()<CR>
-
-let g:rspec_command = 'call Send_to_Tmux("clear\n bundle exec rspec {spec}\n")'
+" vim-test mapping
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+let test#strategy = "neoterm"
 
 set completefunc=syntaxcomplete#Complete
 
