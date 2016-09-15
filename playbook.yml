@@ -1,7 +1,6 @@
 ---
 
 - hosts: all
-  gather_facts: no
   tasks:
     - name: git
       apt: name=git state=present
@@ -12,8 +11,8 @@
       become: yes
       tags: ubuntu
 
-    - include: playbooks/nvim.yml
-      tags: nvim
+    - include: playbooks/vim.yml
+      tags: vim
 
     - include: playbooks/dotfiles.yml
       tags: dotfiles

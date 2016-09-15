@@ -56,7 +56,6 @@
       export PS1='$(__git_ps1) \W\$ '
 
       alias vi='nvim'
-      alias vim='nvim'
 
       function jcurl() {
         curl "$@" | json | pygmentize -l igor

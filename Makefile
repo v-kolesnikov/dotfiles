@@ -1,8 +1,8 @@
 install:
 				ansible-playbook playbook.yml -i local
 
-nvim:
-				ansible-playbook playbook.yml -i local --tags=nvim
+vim:
+				ansible-playbook playbook.yml -i local --tags=vim
 
 install_ansible:
 				sudo apt-get install software-properties-common
