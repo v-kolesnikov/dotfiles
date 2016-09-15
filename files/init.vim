@@ -151,7 +151,6 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-let g:ctrlp_regexp = 1
 " ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
