@@ -116,6 +116,8 @@ call plug#end()
 
 filetype plugin indent on
 
+set cb=unnamedplus
+
 set lazyredraw
 set cursorline
 set hidden
