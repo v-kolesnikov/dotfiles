@@ -260,6 +260,7 @@ command J :%!python -mjson.tool
 " NeoTerm config
 let g:neoterm_position = 'vertical'
 let g:neoterm_automap_keys = ',tt'
+let g:neoterm_use_relative_path = 1
 
 nnoremap <silent> <f10> :TREPLSendFile<cr>
 nnoremap <silent> <f9> :TREPLSend<cr>
