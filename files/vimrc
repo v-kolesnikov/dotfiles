@@ -92,6 +92,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'mtscout6/vim-cjsx'
 Plug 'moll/vim-node'
+Plug 'benjie/neomake-local-eslint.vim'
 
 " Ruby, Rails
 Plug 'tpope/vim-bundler'
