@@ -33,8 +33,8 @@
   file: src={{ playbook_dir }}/files/haskeline dest=~/.haskeline state=link force=yes
   tags: haskell
 
-- name: .eslintrc.yml
-  file: src={{ playbook_dir }}/files/eslintrc.yml dest=~/.eslintrc.yml state=link force=yes
+- name: .eslintrc.json
+  file: src={{ playbook_dir }}/files/eslintrc.json dest=~/.eslintrc.json state=link force=yes
   tags: js
 
 - block:
