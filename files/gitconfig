@@ -17,5 +17,9 @@
 	br = branch
 	sdiff = diff --staged
 	tree = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%x09%h %Creset%ad%Cblue%d %Creset %s %C(bold)(%an)%Creset\"
+    log-base-forward = "!f() { \
+        base=`git merge-base $1 HEAD`; \
+        git log $base..$1 $@; \
+    }; f"
 	type = cat-file -t
 	dump = cat-file -p
