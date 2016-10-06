@@ -1,28 +1,28 @@
 [user]
-	email = re.vkolesnikov@gmail.com
-	name = Vasily Kolesnikov
+    email = re.vkolesnikov@gmail.com
+    name = Vasily Kolesnikov
 [push]
-	default = tracking
+    default = tracking
 [diff]
-	compactionHeuristic = true
+    compactionHeuristic = true
 [core]
-	editor = vim
-	excludesfile = ~/.gitignore_global
+    editor = vim
+    excludesfile = ~/.gitignore_global
 [alias]
-	co = checkout
-	ci = commit
-	ca = commit --amend
-	pf = push --force-with-lease
-	st = status
-	br = branch
-	sdiff = diff --staged
+    co = checkout
+    ci = commit
+    ca = commit --amend
+    pf = push --force-with-lease
+    st = status
+    br = branch
+    sdiff = diff --staged
     l = log --pretty=format:'%Cred%h%Creset - %Cgreen(%ad) %C(bold blue)%<(20)%an%Creset %<(50,trunc)%s' --date=format:'%Y-%m-%d %H:%M:%S'
     ls = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit
-	tree = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%x09%h %Creset%ad%Cblue%d %Creset %s %C(bold)(%an)%Creset\"
+    tree = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%x09%h %Creset%ad%Cblue%d %Creset %s %C(bold)(%an)%Creset\"
     log-base-forward = "!f() { \
         base=`git merge-base $1 HEAD`; \
         git log $base..$1 $@; \
     }; f"
     ignored = !git ls-files -v | grep '^h'
-	type = cat-file -t
-	dump = cat-file -p
+    type = cat-file -t
+    dump = cat-file -p
