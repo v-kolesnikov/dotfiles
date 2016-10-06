@@ -23,6 +23,10 @@
         base=`git merge-base $1 HEAD`; \
         git log $base..$1 $@; \
     }; f"
+
+    ignore = update-index --assume-unchanged
+    unignore = update-index --no-assume-unchanged
     ignored = !git ls-files -v | grep '^h'
+
     type = cat-file -t
     dump = cat-file -p
