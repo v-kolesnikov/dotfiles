@@ -245,7 +245,8 @@ au BufRead,BufNewFile *.md setlocal spell spelllang=ru_ru,en_us
 au BufRead,BufNewFile *.md set invwrap
 au FileType gitcommit setlocal spell
 
-au FileType ruby setl sw=2 sts=2 et
+au FileType ruby  setl sw=2 sts=2 et
+au FileType eruby setl sw=2 sts=2 et
 au FileType javascript setl sw=2 sts=2 et
 au FileType yaml setl sw=2 sts=2 et
 
