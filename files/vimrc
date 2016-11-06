@@ -286,3 +286,6 @@ nnoremap <silent> ,tl :call neoterm#clear()<cr>
 " kills the current job (send a <c-c>)
 nnoremap <silent> ,tc :call neoterm#kill()<cr>
 " === end ===
+
+let g:bufExplorerShowRelativePath=1
+let g:alchemist_iex_term_split='vsplit'
