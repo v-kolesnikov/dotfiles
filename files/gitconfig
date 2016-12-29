@@ -16,6 +16,7 @@
     pf = push --force-with-lease
     st = status
     br = branch
+    mff = merge --ff-only
     sdiff = diff --staged
     l = log --pretty=format:'%Cred%h%Creset - %Cgreen(%ad) %C(bold blue)%<(20)%an%Creset %<(50,trunc)%s' --date=format:'%Y-%m-%d %H:%M:%S'
     ls = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit
