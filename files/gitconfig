@@ -5,6 +5,7 @@
     default = tracking
 [diff]
     compactionHeuristic = true
+    algorithm = patience
 [core]
     editor = nvim
     excludesfile = ~/.gitignore_global
