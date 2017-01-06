@@ -93,6 +93,7 @@ Plug 'slashmili/alchemist.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'mtscout6/vim-cjsx'
+Plug 'flowtype/vim-flow'
 Plug 'moll/vim-node'
 Plug 'benjie/neomake-local-eslint.vim'
 
@@ -211,7 +212,7 @@ nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
 " === Neomake config ===
-let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
 let g:neomake_elixir_enabled_makers = ['elixir', 'credo']
 
 autocmd! BufWritePost * Neomake
