@@ -24,6 +24,7 @@ Plug 'jasoncodes/ctrlp-modified.vim'
 Plug 'scrooloose/nerdtree'
 
 " Autocomplete
+Plug 'jiangmiao/auto-pairs'
 Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
