@@ -15,6 +15,7 @@ Plug 'neomake/neomake'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+Plug 'janko-m/vim-test'
 
 " Search and navigation
 Plug 'dyng/ctrlsf.vim'
@@ -266,7 +267,6 @@ autocmd FileType xml            setlocal omnifunc=xmlcomplete#CompleteTags
 command J :%!python -mjson.tool
 
 " NeoTerm config
-let g:neoterm_position = 'vertical'
 let g:neoterm_automap_keys = ',tt'
 let g:neoterm_use_relative_path = 1
 
@@ -274,11 +274,11 @@ nnoremap <silent> <f10> :TREPLSendFile<cr>
 nnoremap <silent> <f9> :TREPLSend<cr>
 vnoremap <silent> <f9> :TREPLSend<cr>
 
-" run set test lib
-nnoremap <silent> ,rt :call neoterm#test#run('all')<cr>
-nnoremap <silent> ,rf :call neoterm#test#run('file')<cr>
-nnoremap <silent> ,rn :call neoterm#test#run('current')<cr>
-nnoremap <silent> ,rr :call neoterm#test#rerun()<cr>
+nmap <silent> <leader>rt :TestSuite<CR>
+nmap <silent> <leader>rf :TestFile<CR>
+nmap <silent> <leader>rn :TestNearest<CR>
+nmap <silent> <leader>rr :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
 
 " Useful maps
 " hide/close terminal
@@ -287,7 +287,8 @@ nnoremap <silent> ,th :call neoterm#close()<cr>
 nnoremap <silent> ,tl :call neoterm#clear()<cr>
 " kills the current job (send a <c-c>)
 nnoremap <silent> ,tc :call neoterm#kill()<cr>
-" === end ===
+
+let test#strategy = "neoterm"
 
 let g:bufExplorerShowRelativePath=1
 let g:alchemist_iex_term_split='vsplit'
