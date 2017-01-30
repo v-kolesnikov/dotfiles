@@ -215,7 +215,7 @@ inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
 " === Neomake config ===
 let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
-let g:neomake_elixir_enabled_makers = ['elixir', 'credo']
+let g:neomake_elixir_enabled_makers = ['credo', 'mix']
 
 autocmd! BufWritePost * Neomake
 " === End Neomake config ===
