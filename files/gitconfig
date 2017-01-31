@@ -18,8 +18,9 @@
     br = branch
     mff = merge --ff-only
     sdiff = diff --staged
-    l = log --pretty=format:'%Cred%h%Creset - %Cgreen(%ad) %C(bold blue)%<(20)%an%Creset %<(50,trunc)%s' --date=format:'%Y-%m-%d %H:%M:%S'
-    ls = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit
+    l = log --pretty=format:'%C(yellow)| %h | %C(blue)%<(15)%ad%C(reset) | %<(50,trunc)%s | %C(green)%<(20,trunc)%an%C(reset) |' --date=format:'%d-%b-%y %H:%M'
+    ls = log --pretty=format:'| %C(yellow)%h%C(reset)| %<(50,trunc)%s | %C(green)%<(20,trunc)%an%C(reset) |' --date=format:'%d-%b-%y %H:%M'
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit
     tree = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%x09%h %Creset%ad%Cblue%d %Creset %s %C(bold)(%an)%Creset\"
     log-base-forward = "!f() { \
         base=`git merge-base $1 HEAD`; \
