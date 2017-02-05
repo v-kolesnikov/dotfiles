@@ -1,11 +1,14 @@
 [user]
     email = re.vkolesnikov@gmail.com
     name = Vasily Kolesnikov
+    signingkey = E692179135898CBB
 [push]
     default = tracking
 [diff]
     compactionHeuristic = true
     algorithm = patience
+[commit]
+    gpgsign = true
 [core]
     editor = nvim
     excludesfile = ~/.gitignore_global
