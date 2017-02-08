@@ -78,6 +78,13 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'thinca/vim-ref'
 Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
 Plug 'slashmili/alchemist.vim'
+Plug 'c-brenn/phoenix.vim'
+
+let g:alchemist_iex_term_size = 15
+let g:alchemist_iex_term_split = 'split'
+let g:alchemist_tag_disable = 1
+let g:elixir_autobuild = 1
+let g:elixir_docpreview = 1
 
 " " Erlang
 " Plug 'vim-erlang/vim-erlang-runtime'
