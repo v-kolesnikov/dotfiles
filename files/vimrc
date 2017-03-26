@@ -41,7 +41,7 @@ Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
 " Plug 'Valloric/MatchTagAlways'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'kana/vim-textobj-user'
 
 " Tools integration
@@ -92,12 +92,12 @@ let g:elixir_docpreview = 1
 " Plug 'vim-erlang/vim-erlang-omnicomplete'
 " Plug 'vim-erlang/vim-erlang-tags'
 
-" " Haskell
-" Plug 'neovimhaskell/haskell-vim'
-" Plug 'eagletmt/ghcmod-vim'
-" Plug 'eagletmt/neco-ghc'
-" Plug 'Twinside/vim-hoogle'
-" Plug 'mpickering/hlint-refactor-vim'
+" Haskell
+Plug 'neovimhaskell/haskell-vim'
+Plug 'eagletmt/ghcmod-vim'
+Plug 'eagletmt/neco-ghc'
+Plug 'Twinside/vim-hoogle'
+Plug 'mpickering/hlint-refactor-vim'
 
 " JavaScript
 Plug 'pangloss/vim-javascript'
@@ -266,7 +266,7 @@ let g:haskellmode_completion_ghc = 0
 
 " Enable omni completion.
 autocmd FileType css            setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType haskel         setlocal omnifunc=necoghc#omnifunc
+autocmd FileType haskell        setlocal omnifunc=necoghc#omnifunc
 autocmd FileType html,markdown  setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript     setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python         setlocal omnifunc=pythoncomplete#Complete
