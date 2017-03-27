@@ -108,11 +108,12 @@
 
     " Themes
     Plug 'nanotech/jellybeans.vim'
-    let g:jellybeans_use_term_background_color = 1
 
     call plug#end()
 
     " { Plugin configuration
+        let mapleader=","
+
         " { Alchemist (Elixir)
             let g:alchemist_iex_term_size = 15
             let g:alchemist_iex_term_split = 'split'
@@ -134,6 +135,11 @@
             let g:haskellmode_completion_ghc = 0
         " }
 
+        " { Jellybeans
+            colorscheme jellybeans
+            let g:jellybeans_use_term_background_color = 1
+        " }
+
         " { Vim-markdown
             let g:markdown_fenced_languages = ['clojure', 'ruby']
         " }
@@ -147,26 +153,47 @@
             let g:neoterm_automap_keys = ',tt'
             let g:neoterm_use_relative_path = 1
             let g:neoterm_shell = 'bash -login'
+
+            nnoremap <silent> ,tc :call neoterm#kill()<cr>
+            nnoremap <silent> ,th :call neoterm#close()<cr>
+            nnoremap <silent> ,tl :call neoterm#clear()<cr>
+            nnoremap <silent> <f10> :TREPLSendFile<cr>
+            nnoremap <silent> <f9> :TREPLSend<cr>
+            vnoremap <silent> <f9> :TREPLSend<cr>
+
         " }
 
         " { NERDTree
+            let NERDTreeIgnore = ['\.pyc$']
+
             nmap <C-\> :NERDTreeFind<CR>
             nmap <silent> <leader><leader> :NERDTreeToggle<CR>
-            let NERDTreeIgnore = ['\.pyc$']
+        " }
+
+        " { CtrlSF
+            nmap     <C-F>f <Plug>CtrlSFPrompt
+            vmap     <C-F>f <Plug>CtrlSFVwordPath
+            vmap     <C-F>F <Plug>CtrlSFVwordExec
+            nmap     <C-F>n <Plug>CtrlSFCwordPath
+            nmap     <C-F>p <Plug>CtrlSFPwordPath
+            nnoremap <C-F>o :CtrlSFOpen<CR>
+            nnoremap <C-F>t :CtrlSFToggle<CR>
+            inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
         " }
 
         " { Vim-test
             let test#strategy = "neoterm"
+
+            nmap <silent> <leader>rt :TestSuite<CR>
+            nmap <silent> <leader>rf :TestFile<CR>
+            nmap <silent> <leader>rn :TestNearest<CR>
+            nmap <silent> <leader>rr :TestLast<CR>
+            nmap <silent> <leader>g :TestVisit<CR>
         " }
     " }
 " }
 
 " { Genaral options
-    filetype plugin indent on
-    filetype off
-
-    let mapleader=","
-
     set cb=unnamedplus
     set completefunc=syntaxcomplete#Complete
     set cursorline
@@ -189,8 +216,6 @@
     set t_Co=256
     set tabstop=4
 " }
-
-colorscheme jellybeans
 
 " The Silver Searcher
 if executable('ag')
@@ -238,16 +263,6 @@ nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
 " ctrlp git modified
 map <Leader>m :CtrlPModified<CR>
 map <Leader>M :CtrlPBranch<CR>
-
-" CtrlSF mapping
-nmap     <C-F>f <Plug>CtrlSFPrompt
-vmap     <C-F>f <Plug>CtrlSFVwordPath
-vmap     <C-F>F <Plug>CtrlSFVwordExec
-nmap     <C-F>n <Plug>CtrlSFCwordPath
-nmap     <C-F>p <Plug>CtrlSFPwordPath
-nnoremap <C-F>o :CtrlSFOpen<CR>
-nnoremap <C-F>t :CtrlSFToggle<CR>
-inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
 " Allows you to enter sudo pass and save the file
 " when you forgot to open your file with sudo
@@ -304,21 +319,3 @@ augroup set_omnifunc
 augroup END
 
 command! J :%!python -mjson.tool
-
-nnoremap <silent> <f10> :TREPLSendFile<cr>
-nnoremap <silent> <f9> :TREPLSend<cr>
-vnoremap <silent> <f9> :TREPLSend<cr>
-
-nmap <silent> <leader>rt :TestSuite<CR>
-nmap <silent> <leader>rf :TestFile<CR>
-nmap <silent> <leader>rn :TestNearest<CR>
-nmap <silent> <leader>rr :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
-
-" Useful maps
-" hide/close terminal
-nnoremap <silent> ,th :call neoterm#close()<cr>
-" clear terminal
-nnoremap <silent> ,tl :call neoterm#clear()<cr>
-" kills the current job (send a <c-c>)
-nnoremap <silent> ,tc :call neoterm#kill()<cr>
