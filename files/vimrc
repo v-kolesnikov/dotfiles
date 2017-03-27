@@ -224,8 +224,6 @@ inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 " === Neomake config ===
 let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
 let g:neomake_elixir_enabled_makers = ['credo', 'mix']
-
-autocmd! BufWritePost * Neomake
 " === End Neomake config ===
 
 let g:markdown_fenced_languages = ['clojure', 'ruby']
@@ -246,33 +244,51 @@ nmap <Leader>p :r ~/.vbuf<CR>
 
 set pastetoggle=<F2>
 
-" Automatically removing all trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
+augroup global_au
+    au!
 
-au BufRead,BufNewFile {Capfile,Gemfile,Guardfile,Vagrantfile,*.prawn} set ft=ruby
-au BufRead,BufNewFile {.babelrc,.eslintrc} set ft=json
+    au BufWritePost * Neomake
 
-au BufRead,BufNewFile *.md setlocal spell spelllang=ru_ru,en_us
-au BufRead,BufNewFile *.md set invwrap
-au FileType gitcommit setlocal spell
+    " Automatically removing all trailing whitespace
+    au BufWritePre * :%s/\s\+$//e
 
-au FileType ruby  setl sw=2 sts=2 et
-au FileType eruby setl sw=2 sts=2 et
-au FileType javascript setl sw=2 sts=2 et
-au FileType yaml setl sw=2 sts=2 et
+    au BufRead,BufNewFile {Capfile,Gemfile,Guardfile,Vagrantfile,*.prawn} set ft=ruby
+    au BufRead,BufNewFile {.babelrc,.eslintrc} set ft=json
+augroup END
+
+augroup ft_markdown
+    au!
+    au FileType markdown setlocal spell spelllang=ru_ru,en_us
+    au FileType markdown setlocal wrap
+augroup END
+
+augroup ft_gitcommit
+    au!
+    au FileType gitcommit setlocal spell spelllang=en_us
+augroup END
+
+augroup set_shift_width
+    au!
+    au FileType ruby  setl sw=2 sts=2 et
+    au FileType eruby setl sw=2 sts=2 et
+    au FileType javascript setl sw=2 sts=2 et
+    au FileType yaml setl sw=2 sts=2 et
+augroup END
+
+augroup set_omnifunc
+    au!
+    au FileType css            setlocal omnifunc=csscomplete#CompleteCSS
+    au FileType haskell        setlocal omnifunc=necoghc#omnifunc
+    au FileType html,markdown  setlocal omnifunc=htmlcomplete#CompleteTags
+    au FileType javascript     setlocal omnifunc=javascriptcomplete#CompleteJS
+    au FileType python         setlocal omnifunc=pythoncomplete#Complete
+    au FileType xml            setlocal omnifunc=xmlcomplete#CompleteTags
+augroup END
+
+command! J :%!python -mjson.tool
 
 " Disable haskell-vim omnifunc
 let g:haskellmode_completion_ghc = 0
-
-" Enable omni completion.
-autocmd FileType css            setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType haskell        setlocal omnifunc=necoghc#omnifunc
-autocmd FileType html,markdown  setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript     setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python         setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml            setlocal omnifunc=xmlcomplete#CompleteTags
-
-command J :%!python -mjson.tool
 
 " NeoTerm config
 let g:neoterm_automap_keys = ',tt'
