@@ -1,156 +1,195 @@
-set nocompatible
-filetype off
+" { Plugins
+    call plug#begin('~/.vim/plugged')
 
-let mapleader=","
+    " General
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-dispatch'
+    Plug 'tpope/vim-endwise'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-git'
+    Plug 'neomake/neomake'
+    Plug 'tpope/vim-repeat'
+    Plug 'tpope/vim-sensible'
+    Plug 'tpope/vim-surround'
+    Plug 'janko-m/vim-test'
 
-call plug#begin('~/.vim/plugged')
+    " Search and navigation
+    Plug 'dyng/ctrlsf.vim'
+    Plug 'jlanzarotta/bufexplorer'
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'jasoncodes/ctrlp-modified.vim'
+    Plug 'scrooloose/nerdtree'
 
-" General
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-git'
-Plug 'neomake/neomake'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
-Plug 'janko-m/vim-test'
+    " Autocomplete
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'Shougo/neocomplete'
+    Plug 'Shougo/neosnippet'
+    Plug 'Shougo/neosnippet-snippets'
 
-" Search and navigation
-Plug 'dyng/ctrlsf.vim'
-Plug 'jlanzarotta/bufexplorer'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'jasoncodes/ctrlp-modified.vim'
-Plug 'scrooloose/nerdtree'
+    " Advanced
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'ConradIrwin/vim-bracketed-paste'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'kassio/neoterm'
+    Plug 'majutsushi/tagbar'
+    Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+    " Plug 'Valloric/MatchTagAlways'
+    Plug 'terryma/vim-multiple-cursors'
+    Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+    Plug 'kana/vim-textobj-user'
 
-" Autocomplete
-Plug 'jiangmiao/auto-pairs'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/neocomplete'
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
+    " Tools integration
+    Plug 'hashivim/vim-vagrant'
+    Plug 'wfleming/vim-codeclimate'
+    Plug 'rizzatti/dash.vim'
 
-" Advanced
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'airblade/vim-gitgutter'
-Plug 'kassio/neoterm'
-Plug 'majutsushi/tagbar'
-Plug 'mbbill/undotree'
-" Plug 'Valloric/MatchTagAlways'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'kana/vim-textobj-user'
+    " Languages support
+    Plug 'chase/vim-ansible-yaml'
+    Plug 'kchmck/vim-coffee-script'
+    Plug 'othree/html5.vim'
+    Plug 'tpope/vim-haml'
+    Plug 'tpope/vim-markdown'
+    Plug 'slim-template/vim-slim'
+    Plug 'tmux-plugins/vim-tmux'
+    Plug 'Glench/Vim-Jinja2-Syntax'
+    Plug 'lmeijvogel/vim-yaml-helper'
+    Plug 'kylef/apiblueprint.vim'
+    Plug 'IN3D/vim-raml'
 
-" Tools integration
-Plug 'hashivim/vim-vagrant'
-Plug 'wfleming/vim-codeclimate'
-Plug 'rizzatti/dash.vim'
+    " Clojure
+    Plug 'guns/vim-clojure-highlight'
+    Plug 'guns/vim-clojure-static'
+    Plug 'guns/vim-slamhound'
+    Plug 'tpope/vim-classpath'
+    Plug 'tpope/vim-fireplace'
+    Plug 'tpope/vim-salve'
+    Plug 'venantius/vim-eastwood'
+    Plug 'venantius/vim-cljfmt'
+    Plug 'vim-scripts/paredit.vim'
 
-" Languages support
-Plug 'chase/vim-ansible-yaml'
-Plug 'kchmck/vim-coffee-script'
-Plug 'othree/html5.vim'
-Plug 'tpope/vim-haml'
-Plug 'tpope/vim-markdown'
-Plug 'slim-template/vim-slim'
-Plug 'tmux-plugins/vim-tmux'
-Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'lmeijvogel/vim-yaml-helper'
-Plug 'kylef/apiblueprint.vim'
-Plug 'IN3D/vim-raml'
+    " Elixir
+    Plug 'elixir-lang/vim-elixir'
+    Plug 'thinca/vim-ref'
+    Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
+    Plug 'slashmili/alchemist.vim'
+    Plug 'c-brenn/phoenix.vim'
 
-" Clojure
-Plug 'guns/vim-clojure-highlight'
-Plug 'guns/vim-clojure-static'
-Plug 'guns/vim-slamhound'
-Plug 'tpope/vim-classpath'
-Plug 'tpope/vim-fireplace'
-Plug 'tpope/vim-salve'
-Plug 'venantius/vim-eastwood'
-Plug 'venantius/vim-cljfmt'
-Plug 'vim-scripts/paredit.vim'
+    " " Erlang
+    " Plug 'vim-erlang/vim-erlang-runtime'
+    " Plug 'vim-erlang/vim-erlang-compiler'
+    " Plug 'vim-erlang/vim-erlang-omnicomplete'
+    " Plug 'vim-erlang/vim-erlang-tags'
 
-" Elixir
-Plug 'elixir-lang/vim-elixir'
-Plug 'thinca/vim-ref'
-Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
-Plug 'slashmili/alchemist.vim'
-Plug 'c-brenn/phoenix.vim'
+    " Haskell
+    Plug 'neovimhaskell/haskell-vim'
+    Plug 'eagletmt/ghcmod-vim'
+    Plug 'eagletmt/neco-ghc'
+    Plug 'Twinside/vim-hoogle'
+    Plug 'mpickering/hlint-refactor-vim'
 
-let g:alchemist_iex_term_size = 15
-let g:alchemist_iex_term_split = 'split'
-let g:alchemist_tag_disable = 1
-let g:elixir_autobuild = 1
-let g:elixir_docpreview = 1
+    " JavaScript
+    Plug 'pangloss/vim-javascript'
+    Plug 'mxw/vim-jsx'
+    Plug 'mtscout6/vim-cjsx'
+    Plug 'flowtype/vim-flow'
+    Plug 'moll/vim-node'
+    Plug 'benjie/neomake-local-eslint.vim'
 
-" " Erlang
-" Plug 'vim-erlang/vim-erlang-runtime'
-" Plug 'vim-erlang/vim-erlang-compiler'
-" Plug 'vim-erlang/vim-erlang-omnicomplete'
-" Plug 'vim-erlang/vim-erlang-tags'
+    " Ruby, Rails
+    Plug 'tpope/vim-bundler'
+    Plug 'tpope/vim-rails'
+    Plug 'vim-ruby/vim-ruby'
+    Plug 'sunaku/vim-ruby-minitest'
+    Plug 'thoughtbot/vim-rspec'
+    Plug 'tpope/vim-rvm'
+    Plug 'p0deje/vim-ruby-interpolation'
 
-" Haskell
-Plug 'neovimhaskell/haskell-vim'
-Plug 'eagletmt/ghcmod-vim'
-Plug 'eagletmt/neco-ghc'
-Plug 'Twinside/vim-hoogle'
-Plug 'mpickering/hlint-refactor-vim'
+    " Themes
+    Plug 'nanotech/jellybeans.vim'
+    let g:jellybeans_use_term_background_color = 1
 
-" JavaScript
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'mtscout6/vim-cjsx'
-Plug 'flowtype/vim-flow'
-Plug 'moll/vim-node'
-Plug 'benjie/neomake-local-eslint.vim'
+    call plug#end()
 
-" Ruby, Rails
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-rails'
-Plug 'vim-ruby/vim-ruby'
-Plug 'sunaku/vim-ruby-minitest'
-Plug 'thoughtbot/vim-rspec'
-Plug 'tpope/vim-rvm'
-Plug 'p0deje/vim-ruby-interpolation'
+    " { Plugin configuration
+        " { Alchemist (Elixir)
+            let g:alchemist_iex_term_size = 15
+            let g:alchemist_iex_term_split = 'split'
+            let g:alchemist_tag_disable = 1
+            let g:elixir_autobuild = 1
+            let g:elixir_docpreview = 1
+        " }
 
-" " Tags support
-" Plug 'xolox/vim-misc'
-" Plug 'xolox/vim-easytags'
+        " { BufExplorer
+            let g:bufExplorerShowRelativePath=1
+        " }
 
-" Themes
-Plug 'nanotech/jellybeans.vim'
-let g:jellybeans_use_term_background_color = 1
+        " { Fireplace (Clojure)
+            nmap <Leader>r :RunTests<CR>
+            autocmd User FireplacePreConnect call fireplace#register_port_file(expand('./nrepl-port'), '/')
+        " }
 
-call plug#end()
+        " { Haskell-vim
+            let g:haskellmode_completion_ghc = 0
+        " }
 
-filetype plugin indent on
+        " { Vim-markdown
+            let g:markdown_fenced_languages = ['clojure', 'ruby']
+        " }
 
-set cb=unnamedplus
+        " { Neomake
+            let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
+            let g:neomake_elixir_enabled_makers = ['credo', 'mix']
+        " }
 
-set lazyredraw
-set cursorline
-set hidden
-set nowrap
-set number
-set hlsearch
-set ignorecase
-set smartcase
-set tabstop=4
-set shiftwidth=4
-set expandtab
+        " { Neoterm
+            let g:neoterm_automap_keys = ',tt'
+            let g:neoterm_use_relative_path = 1
+            let g:neoterm_shell = 'bash -login'
+        " }
 
-set splitbelow
-set splitright
-set diffopt+=vertical
+        " { NERDTree
+            nmap <C-\> :NERDTreeFind<CR>
+            nmap <silent> <leader><leader> :NERDTreeToggle<CR>
+            let NERDTreeIgnore = ['\.pyc$']
+        " }
 
-set nobackup
-set nowb
-set noswapfile
+        " { Vim-test
+            let test#strategy = "neoterm"
+        " }
+    " }
+" }
 
-set t_Co=256
+" { Genaral options
+    filetype plugin indent on
+    filetype off
+
+    let mapleader=","
+
+    set cb=unnamedplus
+    set completefunc=syntaxcomplete#Complete
+    set cursorline
+    set diffopt+=vertical
+    set expandtab
+    set hidden
+    set hlsearch
+    set ignorecase
+    set lazyredraw
+    set nobackup
+    set noswapfile
+    set nowb
+    set nowrap
+    set number
+    set pastetoggle=<F2>
+    set shiftwidth=4
+    set smartcase
+    set splitbelow
+    set splitright
+    set t_Co=256
+    set tabstop=4
+" }
+
 colorscheme jellybeans
 
 " The Silver Searcher
@@ -186,17 +225,6 @@ map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 nnoremap <silent> <bs> <C-w><Left>
 
-set completefunc=syntaxcomplete#Complete
-
-" Clojure
-nmap <Leader>r :RunTests<CR>
-autocmd User FireplacePreConnect call fireplace#register_port_file(expand('./nrepl-port'), '/')
-
-" NERDTree
-nmap <C-\> :NERDTreeFind<CR>
-nmap <silent> <leader><leader> :NERDTreeToggle<CR>
-let NERDTreeIgnore = ['\.pyc$']
-
 " upper/lower word
 nmap <leader>u mQviwU`Q
 nmap <leader>l mQviwu`Q
@@ -221,15 +249,6 @@ nnoremap <C-F>o :CtrlSFOpen<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
-" === Neomake config ===
-let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
-let g:neomake_elixir_enabled_makers = ['credo', 'mix']
-" === End Neomake config ===
-
-let g:markdown_fenced_languages = ['clojure', 'ruby']
-
-let g:easytags_async = 1
-
 " Allows you to enter sudo pass and save the file
 " when you forgot to open your file with sudo
 cmap w!! %!sudo tee > /dev/null null%
@@ -242,12 +261,11 @@ nmap <Leader>y :.w! ~/.vbuf<CR>
 " paste the contents of the buffer file
 nmap <Leader>p :r ~/.vbuf<CR>
 
-set pastetoggle=<F2>
-
 augroup global_au
     au!
 
     au BufWritePost * Neomake
+    au BufWritePost init.vim,.vimrc source %
 
     " Automatically removing all trailing whitespace
     au BufWritePre * :%s/\s\+$//e
@@ -287,14 +305,6 @@ augroup END
 
 command! J :%!python -mjson.tool
 
-" Disable haskell-vim omnifunc
-let g:haskellmode_completion_ghc = 0
-
-" NeoTerm config
-let g:neoterm_automap_keys = ',tt'
-let g:neoterm_use_relative_path = 1
-let g:neoterm_shell = 'bash -login'
-
 nnoremap <silent> <f10> :TREPLSendFile<cr>
 nnoremap <silent> <f9> :TREPLSend<cr>
 vnoremap <silent> <f9> :TREPLSend<cr>
@@ -312,8 +322,3 @@ nnoremap <silent> ,th :call neoterm#close()<cr>
 nnoremap <silent> ,tl :call neoterm#clear()<cr>
 " kills the current job (send a <c-c>)
 nnoremap <silent> ,tc :call neoterm#kill()<cr>
-
-let test#strategy = "neoterm"
-
-let g:bufExplorerShowRelativePath=1
-let g:alchemist_iex_term_split='vsplit'
