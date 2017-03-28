@@ -83,11 +83,11 @@
     " Plug 'vim-erlang/vim-erlang-tags'
 
     " Haskell
-    Plug 'neovimhaskell/haskell-vim'
     Plug 'eagletmt/ghcmod-vim'
     Plug 'eagletmt/neco-ghc'
-    Plug 'Twinside/vim-hoogle'
     Plug 'mpickering/hlint-refactor-vim'
+    Plug 'neovimhaskell/haskell-vim'
+    Plug 'twinside/vim-hoogle'
 
     " JavaScript
     Plug 'pangloss/vim-javascript'
@@ -129,6 +129,11 @@
         " { Fireplace (Clojure)
             nmap <Leader>r :RunTests<CR>
             autocmd User FireplacePreConnect call fireplace#register_port_file(expand('./nrepl-port'), '/')
+        " }
+
+        " { Ghc-mod (Haskell)
+            hi ghcmodType ctermbg=yellow
+            let g:ghcmod_type_highlight = 'ghcmodType'
         " }
 
         " { Haskell-vim
@@ -300,6 +305,21 @@ augroup ft_gitcommit
     au FileType gitcommit setlocal spell spelllang=en_us
 augroup END
 
+augroup ft_haskell
+    au FileType haskell setlocal makeprg=stack
+    au FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+    autocmd BufWritePost *.hs GhcModCheckAndLintAsync
+
+    " { Mappings
+        au FileType haskell nnoremap <buffer> gll :Neomake<CR>
+        au FileType haskell nnoremap <silent><buffer> gfs :GhcModSplitFunCase<CR>
+        au FileType haskell nnoremap <silent><buffer> git :GhcModTypeInsert<CR>
+        au FileType haskell nnoremap <silent><buffer> gtt :GhcModType<CR>
+        au FileType haskell nnoremap <silent><buffer> gct :GhcModTypeClear<CR>
+    " }
+augroup END
+
 augroup set_shift_width
     au!
     au FileType ruby  setl sw=2 sts=2 et
@@ -311,7 +331,6 @@ augroup END
 augroup set_omnifunc
     au!
     au FileType css            setlocal omnifunc=csscomplete#CompleteCSS
-    au FileType haskell        setlocal omnifunc=necoghc#omnifunc
     au FileType html,markdown  setlocal omnifunc=htmlcomplete#CompleteTags
     au FileType javascript     setlocal omnifunc=javascriptcomplete#CompleteJS
     au FileType python         setlocal omnifunc=pythoncomplete#Complete
