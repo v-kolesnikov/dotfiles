@@ -209,6 +209,7 @@
     set ignorecase
     set lazyredraw
     set nobackup
+    set nocursorline
     set noswapfile
     set nowb
     set nowrap
