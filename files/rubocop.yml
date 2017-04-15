@@ -9,3 +9,10 @@ Style/Documentation:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Style/FileName:
+  Exclude:
+    - Capfile
+    - Guardfile
+    - Rakefile
+    - Vagrantfile
