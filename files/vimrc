@@ -145,6 +145,10 @@
             let g:jellybeans_use_term_background_color = 1
         " }
 
+        " { Vim-jsx
+            let g:jsx_ext_required = 0
+        " }
+
         " { Vim-markdown
             let g:markdown_fenced_languages = ['clojure', 'ruby']
         " }
