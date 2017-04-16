@@ -126,6 +126,17 @@
             let g:bufExplorerShowRelativePath=1
         " }
 
+        " { CtrlSF
+            nmap     <C-F>f <Plug>CtrlSFPrompt
+            vmap     <C-F>f <Plug>CtrlSFVwordPath
+            vmap     <C-F>F <Plug>CtrlSFVwordExec
+            nmap     <C-F>n <Plug>CtrlSFCwordPath
+            nmap     <C-F>p <Plug>CtrlSFPwordPath
+            nnoremap <C-F>o :CtrlSFOpen<CR>
+            nnoremap <C-F>t :CtrlSFToggle<CR>
+            inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+        " }
+
         " { Fireplace (Clojure)
             nmap <Leader>r :RunTests<CR>
             autocmd User FireplacePreConnect call fireplace#register_port_file(expand('./nrepl-port'), '/')
@@ -169,7 +180,6 @@
             nnoremap <silent> <f10> :TREPLSendFile<cr>
             nnoremap <silent> <f9> :TREPLSend<cr>
             vnoremap <silent> <f9> :TREPLSend<cr>
-
         " }
 
         " { NERDTree
@@ -177,17 +187,6 @@
 
             nmap <C-\> :NERDTreeFind<CR>
             nmap <silent> <leader><leader> :NERDTreeToggle<CR>
-        " }
-
-        " { CtrlSF
-            nmap     <C-F>f <Plug>CtrlSFPrompt
-            vmap     <C-F>f <Plug>CtrlSFVwordPath
-            vmap     <C-F>F <Plug>CtrlSFVwordExec
-            nmap     <C-F>n <Plug>CtrlSFCwordPath
-            nmap     <C-F>p <Plug>CtrlSFPwordPath
-            nnoremap <C-F>o :CtrlSFOpen<CR>
-            nnoremap <C-F>t :CtrlSFToggle<CR>
-            inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
         " }
 
         " { Vim-test
@@ -286,7 +285,7 @@ nmap <Leader>y :.w! ~/.vbuf<CR>
 " paste the contents of the buffer file
 nmap <Leader>p :r ~/.vbuf<CR>
 
-augroup global_au
+augroup au_common
     au!
 
     au BufWritePost * Neomake
@@ -299,38 +298,29 @@ augroup global_au
     au BufRead,BufNewFile {.babelrc,.eslintrc} set ft=json
 augroup END
 
-augroup ft_markdown
-    au!
-    au FileType markdown setlocal spell spelllang=ru_ru,en_us
-    au FileType markdown setlocal wrap
-augroup END
-
 augroup ft_gitcommit
     au!
     au FileType gitcommit setlocal spell spelllang=en_us
 augroup END
 
 augroup ft_haskell
+    au!
     au FileType haskell setlocal makeprg=stack
     au FileType haskell setlocal omnifunc=necoghc#omnifunc
 
     autocmd BufWritePost *.hs GhcModCheckAndLintAsync
 
-    " { Mappings
-        au FileType haskell nnoremap <buffer> gll :Neomake<CR>
-        au FileType haskell nnoremap <silent><buffer> gfs :GhcModSplitFunCase<CR>
-        au FileType haskell nnoremap <silent><buffer> git :GhcModTypeInsert<CR>
-        au FileType haskell nnoremap <silent><buffer> gtt :GhcModType<CR>
-        au FileType haskell nnoremap <silent><buffer> gct :GhcModTypeClear<CR>
-    " }
+    au FileType haskell nnoremap <buffer> gll :Neomake<CR>
+    au FileType haskell nnoremap <silent><buffer> gfs :GhcModSplitFunCase<CR>
+    au FileType haskell nnoremap <silent><buffer> git :GhcModTypeInsert<CR>
+    au FileType haskell nnoremap <silent><buffer> gtt :GhcModType<CR>
+    au FileType haskell nnoremap <silent><buffer> gct :GhcModTypeClear<CR>
 augroup END
 
-augroup set_shift_width
+augroup ft_markdown
     au!
-    au FileType ruby  setl sw=2 sts=2 et
-    au FileType eruby setl sw=2 sts=2 et
-    au FileType javascript setl sw=2 sts=2 et
-    au FileType yaml setl sw=2 sts=2 et
+    au FileType markdown setlocal spell spelllang=ru_ru,en_us
+    au FileType markdown setlocal wrap
 augroup END
 
 augroup set_omnifunc
@@ -340,6 +330,14 @@ augroup set_omnifunc
     au FileType javascript     setlocal omnifunc=javascriptcomplete#CompleteJS
     au FileType python         setlocal omnifunc=pythoncomplete#Complete
     au FileType xml            setlocal omnifunc=xmlcomplete#CompleteTags
+augroup END
+
+augroup set_shift_width
+    au!
+    au FileType ruby  setl sw=2 sts=2 et
+    au FileType eruby setl sw=2 sts=2 et
+    au FileType javascript setl sw=2 sts=2 et
+    au FileType yaml setl sw=2 sts=2 et
 augroup END
 
 command! J :%!python -mjson.tool
