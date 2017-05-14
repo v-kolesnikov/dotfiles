@@ -16,3 +16,6 @@ Style/FileName:
     - Guardfile
     - Rakefile
     - Vagrantfile
+
+Style/LambdaCall:
+  Enabled: false
