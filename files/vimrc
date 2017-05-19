@@ -39,6 +39,7 @@
     Plug 'terryma/vim-multiple-cursors'
     Plug 'Shougo/vimproc.vim', {'do' : 'make'}
     Plug 'kana/vim-textobj-user'
+    Plug 'powerman/vim-plugin-AnsiEsc'
 
     " Tools integration
     Plug 'hashivim/vim-vagrant'
