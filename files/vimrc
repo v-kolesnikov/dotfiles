@@ -58,6 +58,7 @@
     Plug 'lmeijvogel/vim-yaml-helper'
     Plug 'kylef/apiblueprint.vim'
     Plug 'IN3D/vim-raml'
+    Plug 'fidian/hexmode'
 
     " Clojure
     Plug 'guns/vim-clojure-highlight'
