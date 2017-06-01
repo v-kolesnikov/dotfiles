@@ -203,7 +203,7 @@
     " }
 " }
 
-" { Genaral options
+" { General options
     set cb=unnamedplus
     set completefunc=syntaxcomplete#Complete
     set cursorline
