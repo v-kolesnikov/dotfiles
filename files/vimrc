@@ -307,11 +307,9 @@ augroup END
 
 augroup ft_haskell
     au!
+    au BufWritePost *.hs GhcModCheckAndLintAsync
     au FileType haskell setlocal makeprg=stack
     au FileType haskell setlocal omnifunc=necoghc#omnifunc
-
-    autocmd BufWritePost *.hs GhcModCheckAndLintAsync
-
     au FileType haskell nnoremap <buffer> gll :Neomake<CR>
     au FileType haskell nnoremap <silent><buffer> gfs :GhcModSplitFunCase<CR>
     au FileType haskell nnoremap <silent><buffer> git :GhcModTypeInsert<CR>
