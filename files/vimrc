@@ -40,6 +40,8 @@
     Plug 'Shougo/vimproc.vim', {'do' : 'make'}
     Plug 'kana/vim-textobj-user'
     Plug 'powerman/vim-plugin-AnsiEsc'
+    Plug 'inkarkat/vim-ingo-library'
+    Plug 'inkarkat/vim-SyntaxRange'
 
     " Tools integration
     Plug 'hashivim/vim-vagrant'
@@ -321,6 +323,10 @@ augroup ft_markdown
     au!
     au FileType markdown setlocal spell spelllang=ru_ru,en_us
     au FileType markdown setlocal wrap
+augroup END
+
+augroup ft_ruby
+    au FileType ruby call SyntaxRange#IncludeEx('keepend start="\%(<<[-\~]SQL\>.*\n\)\@<=" end="SQL" containedin=ALL', 'sql')
 augroup END
 
 augroup set_omnifunc
