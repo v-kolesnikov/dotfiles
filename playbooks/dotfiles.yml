@@ -25,6 +25,7 @@
   file: src={{ playbook_dir }}/files/{{ item }} dest=~/.{{ item }} state=link force=yes
   with_items:
     - gemrc
+    - irbrc
     - pryrc
     - rubocop.yml
   tags: ruby
