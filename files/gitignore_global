@@ -2,3 +2,4 @@
 .retry
 .vagrant
 *.log
+.byebug_history
