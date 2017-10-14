@@ -54,7 +54,7 @@
     backup: yes
     content: |
       export EDITOR=nvim
-      export PS1='$(__git_ps1) \W\$ '
+      export PS1='$(__git_ps1) \W λ '
 
       alias vi='nvim'
 
