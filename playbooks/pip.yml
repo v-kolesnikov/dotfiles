@@ -1,3 +1,6 @@
+# @deprecated
+# This file still be in repository only as example
+
 - easy_install: name=pip
 
 - pip: name={{ item }} state=latest
