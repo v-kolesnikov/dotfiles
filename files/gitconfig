@@ -33,8 +33,5 @@
     ignore = update-index --assume-unchanged
     unignore = update-index --no-assume-unchanged
     ignored = !git ls-files -v | grep '^h'
-
-    type = cat-file -t
-    dump = cat-file -p
 [gpg]
 	program = gpg2
