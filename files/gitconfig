@@ -15,6 +15,7 @@
 [pretty]
 	dry = "%C(blue)%<(15)%ad%C(reset) %C(yellow)%h%C(reset) | %<(50,trunc)%s|"
 	all = "%C(blue)%<(15)%ad%C(reset) %C(yellow)%h%C(reset) | %<(50,trunc)%s| %C(green)%<(20,trunc)%an%C(reset) |"
+	graph = "\t%C(blue)%<(15)%ad%C(reset) %C(yellow)%h%C(reset) %s (%C(green)%an%C(reset)) %C(auto)%d"
 [alias]
     co = checkout
     ci = commit
@@ -27,9 +28,7 @@
 
     l  = log --pretty=dry
     ll = log --pretty=all
-    lg = log --pretty=all --graph
-
-    tree = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%x09%h %Creset%ad%Cblue%d %Creset %s %C(bold)(%an)%Creset\"
+    lg = log --pretty=graph --graph
 
     log-base-forward = "!f() { \
         base=`git merge-base $1 HEAD`; \
