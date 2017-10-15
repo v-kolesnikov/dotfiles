@@ -3,4 +3,14 @@
 # DotFiles
 
 ## Overview
-Configuration files for editors and other UNIX tools. This is to make it easier to setup programming environment for me. Actually it is a  [mokevnin/dotfiles](https://github.com/mokevnin/dotfiles) fork.
+Configuration files for editors and other UNIX tools. This is to make it easier to set up programming environment.
+
+## Requirements
+
+- [Ansible](https://github.com/ansible/ansible)
+
+## Setup
+
+```
+ansible-playbook playbook.yml -i local -vv
+```
