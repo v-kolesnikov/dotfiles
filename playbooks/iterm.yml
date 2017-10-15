@@ -1,0 +1,15 @@
+- block:
+  - name: Specify the preferences directory
+    osx_defaults:
+      domain: com.googlecode.iterm2.plist
+      key: PrefsCustomFolder
+      type: string
+      value: "{{ playbook_dir }}/files/iterm2/"
+      state: present
+  - name: Tell iTerm2 to use the custom preferences in the directory
+    osx_defaults:
+      domain: com.googlecode.iterm2.plist
+      key: LoadPrefsFromCustomFolder
+      type: bool
+      value: true
+      state: present

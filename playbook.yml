@@ -16,3 +16,7 @@
 
     - include: playbooks/dotfiles.yml
       tags: dotfiles
+
+    - include: playbooks/iterm.yml
+      tags: [iterm]
+      when: ansible_distribution == 'MacOSX'
