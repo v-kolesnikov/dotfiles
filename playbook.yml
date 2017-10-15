@@ -2,21 +2,15 @@
 
 - hosts: all
   tasks:
-    - name: git
-      apt: name=git state=present
-      become: yes
-      tags: git
-
-    - include: playbooks/ubuntu.yml
-      become: yes
-      tags: ubuntu
-
-    - include: playbooks/vim.yml
+    - name: vim
+      import_tasks: playbooks/vim.yml
       tags: vim
 
-    - include: playbooks/dotfiles.yml
+    - name: dotfiles
+      import_tasks: playbooks/dotfiles.yml
       tags: dotfiles
 
-    - include: playbooks/iterm.yml
+    - name: iterm2
+      import_tasks: playbooks/iterm2.yml
       tags: [iterm]
       when: ansible_distribution == 'MacOSX'

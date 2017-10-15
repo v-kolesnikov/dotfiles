@@ -1,9 +1,0 @@
-# @deprecated
-# This file still be in repository only as example
-
-- gem: name={{ item }} state=latest
-  with_items:
-    - foreman
-    - rubocop
-  tags: ruby
-

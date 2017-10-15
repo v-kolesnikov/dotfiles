@@ -1,16 +1,3 @@
-- block:
-  - name: add NeoVim ppa
-    apt_repository: repo='ppa:neovim-ppa/unstable' state=present
-
-  - name: install nvim
-    apt: name=neovim state=present
-
-  - name: install nvim python-client
-    pip: name=neovim state=present
-
-  become: true
-  when: ansible_os_family == "Debian"
-
 - name: prepare config directory
   file: path={{ item }}/autoload state=directory recurse=Yes
   with_items:
