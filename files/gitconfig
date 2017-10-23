@@ -13,8 +13,8 @@
     editor = nvim
     excludesfile = ~/.gitignore_global
 [pretty]
-	dry = "%C(blue)%<(15)%ad%C(reset) %C(yellow)%h%C(reset) | %<(50,trunc)%s|"
-	all = "%C(blue)%<(15)%ad%C(reset) %C(yellow)%h%C(reset) | %<(50,trunc)%s| %C(green)%<(20,trunc)%an%C(reset) |"
+	compact = "%C(blue)%<(15)%ad%C(reset) %C(yellow)%h%C(reset) | %<(50,trunc)%s|"
+	author  = "%C(blue)%<(15)%ad%C(reset) %C(yellow)%h%C(reset) | %<(50,trunc)%s| %C(green)%<(20,trunc)%an%C(reset) |"
 	graph = "\t%C(blue)%<(15)%ad%C(reset) %C(yellow)%h%C(reset) %s (%C(green)%an%C(reset)) %C(auto)%d"
 [alias]
     co = checkout
@@ -26,9 +26,10 @@
     mff = merge --ff-only
     sdiff = diff --staged
 
-    l  = log --pretty=dry
-    ll = log --pretty=all
-    lg = log --pretty=graph --graph
+    l  = log --pretty=compact
+    ls = log --pretty=compact --no-merges
+    la = log --pretty=author
+    lg = log --pretty=graph --graph --all
 
     log-base-forward = "!f() { \
         base=`git merge-base $1 HEAD`; \
