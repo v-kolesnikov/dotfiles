@@ -1,7 +1,7 @@
 [user]
     email = re.vkolesnikov@gmail.com
     name = Vasily Kolesnikov
-    signingkey = 77F06B614C394430
+    signingkey = AC12CDFE8C7B22C0
 [push]
     default = tracking
 [diff]
