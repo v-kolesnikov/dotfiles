@@ -23,6 +23,7 @@
     pf = push --force-with-lease
     st = status
     br = branch
+    ai = add --intent-to-add
     mff = merge --ff-only
     sdiff = diff --staged
 
