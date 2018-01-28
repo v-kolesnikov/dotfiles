@@ -11,7 +11,7 @@ Style/Documentation:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-Style/FileName:
+Naming/FileName:
   Exclude:
     - Capfile
     - Guardfile
