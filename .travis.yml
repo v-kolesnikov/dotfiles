@@ -13,8 +13,8 @@ matrix:
 cache: pip
 
 install:
-  - pip install ansible
-  - pip install ansible-lint
+  - pip2 install ansible
+  - pip2 install ansible-lint
 
 script:
   - make test
