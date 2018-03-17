@@ -9,6 +9,7 @@
     Plug 'tpope/vim-git'
     Plug 'neomake/neomake'
     Plug 'tpope/vim-repeat'
+    Plug 'tpope/vim-rhubarb'
     Plug 'tpope/vim-sensible'
     Plug 'tpope/vim-surround'
     Plug 'janko-m/vim-test'
