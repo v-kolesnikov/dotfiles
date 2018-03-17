@@ -7,12 +7,12 @@
     Plug 'tpope/vim-endwise'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-git'
-    Plug 'neomake/neomake'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-rhubarb'
     Plug 'tpope/vim-sensible'
     Plug 'tpope/vim-surround'
     Plug 'janko-m/vim-test'
+    Plug 'w0rp/ale'
 
     " Search and navigation
     Plug 'dyng/ctrlsf.vim'
@@ -100,7 +100,6 @@
     Plug 'mtscout6/vim-cjsx'
     Plug 'flowtype/vim-flow'
     Plug 'moll/vim-node'
-    Plug 'benjie/neomake-local-eslint.vim'
 
     " Ruby, Rails
     Plug 'tpope/vim-bundler'
@@ -177,10 +176,19 @@
             let g:markdown_fenced_languages = ['clojure', 'ruby']
         " }
 
-        " { Neomake
-            let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
-            let g:neomake_elixir_enabled_makers = ['credo', 'mix']
+        " { Ale
+            let g:ale_echo_msg_format = '[%linter%] [%severity%] %s'
+            let g:ale_linters = {
+            \   'ruby': ['ruby', 'rubocop', 'reek'],
+            \}
+            let g:ale_set_highlights = 0
         " }
+
+        " " { Neomake
+        "     let g:neomake_elixir_enabled_makers = ['credo', 'mix']
+        "     let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
+        "     let g:neomake_ruby_enabled_makers = ['mri', 'rubocop', 'reek', 'brakeman']
+        " " }
 
         " { Neoterm
             let g:neoterm_automap_keys = ',tt'
@@ -288,7 +296,6 @@ nmap <Leader>p :r ~/.vbuf<CR>
 augroup au_common
     au!
 
-    au BufWritePost * Neomake
     au BufWritePost init.vim,.vimrc source %
 
     " Automatically removing all trailing whitespace
@@ -308,7 +315,6 @@ augroup ft_haskell
     au BufWritePost *.hs GhcModCheckAndLintAsync
     au FileType haskell setlocal makeprg=stack
     au FileType haskell setlocal omnifunc=necoghc#omnifunc
-    au FileType haskell nnoremap <buffer> gll :Neomake<CR>
     au FileType haskell nnoremap <silent><buffer> gfs :GhcModSplitFunCase<CR>
     au FileType haskell nnoremap <silent><buffer> git :GhcModTypeInsert<CR>
     au FileType haskell nnoremap <silent><buffer> gtt :GhcModType<CR>
