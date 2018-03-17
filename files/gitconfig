@@ -30,7 +30,7 @@
     l  = log --pretty=compact
     ls = log --pretty=compact --no-merges
     la = log --pretty=author
-    lg = log --pretty=graph --graph --all
+    lg = log --pretty=graph --graph --branches --remotes --tags
 
     log-base-forward = "!f() { \
         base=`git merge-base $1 HEAD`; \
