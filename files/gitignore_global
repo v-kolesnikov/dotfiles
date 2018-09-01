@@ -1,5 +1,6 @@
 .DS_Store
 .retry
 .vagrant
+.vscode
 *.log
 .byebug_history
