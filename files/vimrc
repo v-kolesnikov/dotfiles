@@ -20,6 +20,7 @@
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'jasoncodes/ctrlp-modified.vim'
     Plug 'scrooloose/nerdtree'
+    Plug 'ruanyl/vim-gh-line'
 
     " Autocomplete
     Plug 'jiangmiao/auto-pairs'
@@ -62,6 +63,11 @@
     Plug 'kylef/apiblueprint.vim'
     Plug 'IN3D/vim-raml'
     Plug 'fidian/hexmode'
+    Plug 'martinda/Jenkinsfile-vim-syntax'
+    Plug 'jvirtanen/vim-hcl'
+
+    " C/C++
+    Plug 'rhysd/vim-clang-format'
 
     " Clojure
     Plug 'guns/vim-clojure-highlight'
@@ -179,7 +185,7 @@
         " { Ale
             let g:ale_echo_msg_format = '[%linter%] [%severity%] %s'
             let g:ale_linters = {
-            \   'ruby': ['ruby', 'rubocop', 'reek'],
+            \   'ruby': ['ruby', 'rubocop', 'reek', 'flog'],
             \}
             let g:ale_set_highlights = 0
         " }
@@ -211,7 +217,7 @@
         " }
 
         " { Vim-test
-            let test#strategy = "neoterm"
+            let test#strategy = "neovim"
 
             nmap <silent> <leader>rt :TestSuite<CR>
             nmap <silent> <leader>rf :TestFile<CR>
@@ -243,7 +249,6 @@
     set smartcase
     set splitbelow
     set splitright
-    set t_Co=256
     set tabstop=4
 " }
 
@@ -259,6 +264,8 @@ endif
 " ==================== KeyMap ========================
 nmap <F8> :TagbarToggle<CR>
 nnoremap <F5> :UndotreeToggle<cr>
+
+nmap <silent> <leader>d <Plug>DashSearch
 
 " Map ctrl-movement keys to window switching
 map <C-k> <C-w><Up>
@@ -295,8 +302,6 @@ nmap <Leader>p :r ~/.vbuf<CR>
 
 augroup au_common
     au!
-
-    au BufWritePost init.vim,.vimrc source %
 
     " Automatically removing all trailing whitespace
     au BufWritePre * :%s/\s\+$//e
