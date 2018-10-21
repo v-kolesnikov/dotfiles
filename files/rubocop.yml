@@ -3,13 +3,11 @@ AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
   ExtraDetails: true
-  TargetRubyVersion: 2.4
-
-Style/Documentation:
-  Enabled: false
-
-Style/FrozenStringLiteralComment:
-  Enabled: false
+  TargetRubyVersion: 2.5
+  Exclude:
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'Vagrantfile'
 
 Naming/FileName:
   Exclude:
@@ -17,6 +15,9 @@ Naming/FileName:
     - Guardfile
     - Rakefile
     - Vagrantfile
+
+Style/Documentation:
+  Enabled: false
 
 Style/LambdaCall:
   Enabled: false
