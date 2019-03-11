@@ -12,6 +12,7 @@
 [core]
     editor = nvim
     excludesfile = ~/.gitignore_global
+    commentchar = $
 [pretty]
 	compact = "%C(blue)%<(15)%ad%C(reset) %C(yellow)%h%C(reset) | %<(50,trunc)%s|"
 	author  = "%C(blue)%<(15)%ad%C(reset) %C(yellow)%h%C(reset) | %<(50,trunc)%s| %C(green)%<(20,trunc)%an%C(reset) |"
@@ -31,6 +32,7 @@
     ls = log --pretty=compact --no-merges
     la = log --pretty=author
     lg = log --pretty=graph --graph --branches --remotes --tags
+    lm = log --pretty=author master..
 
     log-base-forward = "!f() { \
         base=`git merge-base $1 HEAD`; \
@@ -49,3 +51,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[credential]
+	helper = osxkeychain
