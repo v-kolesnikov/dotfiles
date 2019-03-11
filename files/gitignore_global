@@ -4,3 +4,7 @@
 .vscode
 *.log
 .byebug_history
+/tmp
+/coverage
+.rspec-local
+.tool-versions
