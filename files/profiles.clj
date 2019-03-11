@@ -1,4 +1,4 @@
-{:user  {:plugins  [[cider/cider-nrepl "0.15.1"]
+{:user  {:plugins  [[cider/cider-nrepl "0.18.0"]
                     [lein-ancient "0.6.15"]
                     [lein-cljfmt "0.5.7"]
                     [lein-cloverage "1.0.9"]
