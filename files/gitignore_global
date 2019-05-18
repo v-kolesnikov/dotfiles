@@ -8,3 +8,4 @@
 /coverage
 .rspec-local
 .tool-versions
+docker-compose.override.yml
