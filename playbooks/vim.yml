@@ -1,8 +1,13 @@
-- name: prepare config directory
-  file: path={{ item }}/autoload state=directory recurse=Yes
-  with_items:
-    - ~/.vim/
-    - ~/.config/nvim
+- file:
+    path: ~/.vim/autoload
+    state: directory
+    recurse: yes
+  tags: [dotfiles, vim]
+
+- file:
+    path: ~/.config/nvim/autoload
+    state: directory
+    recurse: yes
   tags: [dotfiles, vim]
 
 - name: install vim-plug
@@ -10,8 +15,8 @@
     dest: "{{ item }}/autoload/plug.vim"
     url: 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   with_items:
-    - ~/.vim/
-    - ~/.config/nvim/
+    - ~/.vim
+    - ~/.config/nvim
   tags: [dotfiles, vim]
 
 - name: nvim config
