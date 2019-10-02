@@ -12,5 +12,5 @@ Configuration files for editors and other UNIX tools. This is to make it easier 
 ## Setup
 
 ```
-ansible-playbook playbook.yml -i local -vv
+make install
 ```
