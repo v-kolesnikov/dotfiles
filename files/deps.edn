@@ -1,0 +1,52 @@
+;; The deps.edn file describes the information needed to build a classpath.
+;;
+;; When using the `clojure` or `clj` script, there are several deps.edn files
+;; that are combined:
+;; - install-level
+;; - user level (this file)
+;; - project level (current directory when invoked)
+;;
+;; For all attributes other than :paths, these config files are merged left to right.
+;; Only the last :paths is kept and others are dropped.
+
+{
+  ;; External dependencies
+  :deps
+  {org.clojure/clojure {:mvn/version "1.10.1"}}
+
+  :aliases {
+    ;; project creation from templates:
+    ;; - see https://github.com/seancorfield/clj-new
+    ;; - create an application project:
+    ;;   - clj -A:new app myname/myapp
+    ;;   - cd myapp
+    ;;   - clj -m myname.myapp # run it!
+    ;;   - clj -A:test:runner # run the tests!
+    ;; - create a library project:
+    ;;   - clj -A:new lib myname/my-cool-lib
+    ;;   - cd my-cool-lib
+    ;;   - clj -A:test:runner # run the tests!
+    :new {:extra-deps {seancorfield/clj-new {:mvn/version "RELEASE"}}
+          :main-opts ["-m" "clj-new.create"]}
+    :repl {:extra-deps
+           {nrepl/nrepl {:mvn/version "0.6.0"}
+            cider/cider-nrepl {:mvn/version "0.24.0"}
+            venantius/pyro {:mvn/version "0.1.2" }
+            cljfmt {:mvn/version "0.6.4"}}
+           :extra-paths ["test"]
+           :main-opts ["-m" "nrepl.cmdline" "-i"] }
+
+    :ancient
+    {:extra-deps {deps-ancient {:mvn/version "RELEASE"}}
+     :main-opts  ["-m" "deps-ancient.deps-ancient"]}
+
+    :lint
+    {:extra-deps {com.jameslaverack/cljfmt-runner
+                  {:git/url "https://github.com/JamesLaverack/cljfmt-runner"
+                   :sha "97960e9a6464935534b5a6bab529e063d0027128"}}
+     :main-opts ["-m" "cljfmt-runner.check"]}
+
+    :fix
+    {:main-opts ["-m" "cljfmt-runner.fix"]}
+  }
+}

@@ -7,6 +7,8 @@
 [diff]
     compactionHeuristic = true
     algorithm = patience
+    colorMoved = default
+	tool = vimdiff
 [commit]
     gpgsign = true
 [core]
@@ -14,8 +16,8 @@
     excludesfile = ~/.gitignore_global
     commentchar = $
 [pretty]
-	compact = "%C(blue)%<(15)%ad%C(reset) %C(yellow)%h%C(reset) | %<(50,trunc)%s|"
-	author  = "%C(blue)%<(15)%ad%C(reset) %C(yellow)%h%C(reset) | %<(50,trunc)%s| %C(green)%<(20,trunc)%an%C(reset) |"
+	compact = "%C(blue)%<(15)%ad%C(reset) %C(yellow)%h%C(reset) | %<(60,trunc)%s|"
+	author  = "%C(blue)%<(15)%ad%C(reset) %C(yellow)%h%C(reset) | %<(60,trunc)%s| %C(green)%<(20,trunc)%an%C(reset) |"
 	graph = "\t%C(blue)%<(15)%ad%C(reset) %C(yellow)%h%C(reset) %s (%C(green)%an%C(reset)) %C(auto)%d"
 [alias]
     co = checkout
@@ -27,6 +29,7 @@
     ai = add --intent-to-add
     mff = merge --ff-only
     sdiff = diff --staged
+    new = !git init && git commit -m 'Initial commit' --allow-empty && :
 
     l  = log --pretty=compact
     ls = log --pretty=compact --no-merges
